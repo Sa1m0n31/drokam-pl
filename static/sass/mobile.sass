@@ -1,0 +1,74 @@
+/* Landing page */
+
+@media(max-width: 1300px)
+  .landingPage
+    .topLogo
+      left: 5vw
+
+    .topMenu
+      right: 5vw
+
+      .topMenuList
+        .topMenuList__item
+          margin: 0 10px
+
+    .btn--callToAction
+      transform: translate(-50%, 100px)
+
+/* About us */
+
+@media(max-width: 1600px)
+  .aboutUsSection__right::after
+    display: none !important
+
+  .aboutUsSection__right
+    .right__img
+      transform: translateY(0) !important
+
+
+
+@media(max-width: 1300px)
+  .aboutUsSection
+    padding: 30px 5vw
+
+@media(max-width: 1000px)
+  .aboutUsSection
+    .aboutUsSection__left
+      .left__content
+        .left__content__p
+          font-size: 15px
+
+/* Portfolio */
+
+@media(max-width: 1600px)
+  .portfolioSection
+    padding-top: 100px
+
+@media(max-width: 1300px)
+  .portfolioSection
+    .portfolio__content
+      padding: 0 5vw 0 5vw
+
+/* Zaufali nam */
+
+@media(max-width: 1300px)
+  .partnersSection
+    padding: 120px 5vw 50px 5vw
+
+    .partners__content
+      width: 90vw
+
+/* Footer */
+
+@media(max-width: 1300px)
+  .footer
+    .footer__left
+      .footer__left__logo
+        width: 28vw
+        height: calc(28vw / 6.73)
+
+      .daneKontaktowe__header__h, .daneKontaktowe__content .daneKontaktowe__content__item .kontaktItem
+        font-size: calc(19px + 10 * ((100vw - 900px)/(400)))
+
+      .daneKontaktowe__content .daneKontaktowe__content__item
+        grid-template-columns: 50px 200px

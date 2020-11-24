@@ -1,2 +1,333 @@
-h1
-  color: red
+// Import font
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap')
+
+// Variables
+
+$primary: #DB2B39
+$aboutBackground: #1E212B91
+$dark: #1E212B
+
+// Mixins
+
+=flex($dir, $justify, $align)
+  display: flex
+  flex-direction: $dir
+  justify-content: $justify
+  align-items: $align
+
+=btnSize($height)
+  height: $height
+  border-radius: $height
+
+// Global
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Hind Siliguri', sans-serif
+
+body, html
+  overflow-x: hidden
+
+ul
+  list-style-type: none
+
+button, input
+  border: none
+  outline: none
+
+.horizontalList
+  display: flex
+
+.btn
+  cursor: pointer
+
+.sectionHeader
+  position: relative
+  color: $dark
+  text-align: center
+  text-transform: uppercase
+  font-size: calc(28px + 20 * ((100vw - 900px)/1100))
+  font-weight: 700
+  margin-bottom: 50px
+
+.sectionHeader::before
+  content: ""
+  position: absolute
+  top: -20px
+  left: 50%
+  transform: translateX(-50%)
+  width: 60px
+  height: 12px
+  background-color: $primary
+
+// Landing page
+
+.landingPage
+  height: fit-content
+  min-height: 800px
+  position: relative
+
+  .landingPageImg
+    position: absolute
+    top: 0
+    left: 0
+    max-height: 100vh
+    min-height: 800px
+
+  .topLogo
+    position: absolute
+    top: 65px
+    left: 140px
+
+  .topMenu
+    position: absolute
+    top: 98px
+    right: 100px
+    color: #fff
+    text-transform: uppercase
+
+    .topMenuList
+
+      .topMenuList__item
+        font-size: 18px
+        font-weight: 600
+        margin: 0 50px
+
+  .centerLogo
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: calc(100vw * 0.5)
+    max-width: 800px
+    height: calc(100vw * 0.4 / 6.5)
+    max-height: 123px
+
+    .centerLogo__img
+      width: 100%
+      height: 100%
+
+  .btn--callToAction
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, 170px)
+    width: 326px
+    background-color: $primary
+    color: #fff
+    font-size: 28px
+    font-weight: 700
+    text-transform: uppercase
+    +btnSize(70px)
+    +flex(row, center, center)
+
+// O nas
+
+.aboutUsSection
+  background: rgba(30, 33, 43, .09)
+  color: $dark
+  width: 100%
+  height: 444px
+  display: flex
+  padding: 30px 140px
+
+  .aboutUsSection__left
+    width: 50%
+
+    .left__header
+      font-size: calc(18px + 18 * ((100vw - 900px)/(1100)))
+      font-weight: 700
+
+    .left__content
+      .left__content__p
+        margin: 20px 0
+
+  .aboutUsSection__right
+    position: relative
+    width: 50%
+    +flex(row, flex-end, center)
+
+    .right__img
+      position: relative
+      width: calc(100vw * 0.35)
+      height: calc((100vw * 0.35) / 1.78)
+      max-width: 701px
+      max-height: 393px
+      transform: translateY(70px)
+
+  .aboutUsSection__right::after
+    content: ""
+    position: absolute
+    left: 70px
+    display: block
+    width: calc(100vw * 0.25)
+    height: calc((100vw * 0.35) / 1.78 + 20px)
+    max-width: 610px
+    max-height: 440px
+    background-color: #1E212B
+    z-index: -1
+    transform: translateY(70px)
+
+// Portfolio
+
+.portfolioSection
+  padding-top: 200px
+  width: 100%
+
+  .portfolio__content
+    width: 100%
+    height: calc((100vw * 0.24) / 1.5 + 100px)
+    max-height: 400px
+    padding: 0 140px
+    background: url("../img/drokam-portfolio-background.png")
+    +flex(row, space-between, center)
+
+    .portfolio__content__item
+      display: block
+      width: calc(100vw * 0.24)
+      height: calc((100vw * 0.24) / 1.5)
+      max-width: 528px
+      max-height: 352px
+
+  .portfolio__bottom
+    margin-top: 50px
+    +flex(row, center, center)
+
+    .btn--portfolio
+      font-size: calc(20px + 12 *((100vw - 900px)/(1100)))
+      font-weight: 700
+      background-color: $dark
+      color: #fff
+      width: calc(100vw * .30)
+      max-width: 500px
+      box-shadow: 0 0 25px #1E212B91
+      +flex(row, center, center)
+      +btnSize(calc(100vw * .05))
+      max-height: 90px
+
+// Zaufali nam
+
+.partnersSection
+  padding: 180px 0 50px 0
+
+  .partners__content
+    width: calc(100vw * .7)
+    max-width: 1300px
+    height: 350px
+    margin: 0 auto
+    background: url("../img/zaufali-nam-tlo.png")
+    background-size: cover
+    +flex(row, center, center)
+
+    .partners__content__inside
+      width: 75%
+      overflow: hidden
+      +flex(row, space-evenly, center)
+
+      .partners__content__item
+        width: 185px
+        height: 185px
+        background-color: #fff
+        margin: 0 10px
+        +flex(row, center, center)
+
+    .partners__content__arrow
+      width: 10%
+      cursor: pointer
+      +flex(row, center, center)
+
+// Footer
+
+.footer
+  position: relative
+  width: 100%
+  height: 540px
+  padding: 0 140px
+  background-color: $dark
+  color: #fff
+  flex-wrap: wrap
+  +flex(row, space-beweeen, center)
+
+  .footer__right, .footer__left
+    width: 50%
+    height: 80%
+
+  .footer__left
+      .daneKontaktowe__header__h
+        font-weight: 300 !important
+        font-size: 25px
+
+      .footer__left__logo
+        width: 330px
+        height: 49px
+        margin-bottom: 30px
+
+      .daneKontaktowe__content
+
+        .daneKontaktowe__content__item
+          display: grid
+          grid-template-columns: 70px 200px
+          grid-template-rows: repeat(2, 40px)
+          align-items: center
+          margin: 20px 0
+
+          .kontaktImg
+            grid-column: 1
+            grid-row: 1 / span 2
+
+          .kontaktItem
+            font-size: 27px
+            font-weight: 400
+
+          .kontaktItem:first-child
+            grid-column: 2
+            grid-row: 1
+
+          .kontaktItem:nth-child(2)
+            grid-column: 2
+
+        .daneKontaktowe__content__item:last-child
+          grid-template-rows: 40px
+
+          .kontaktItem:first-child
+            grid-row: 1 / span 2
+
+          //.kontaktItem
+            //margin-left: 40px
+
+  .footer__right
+    +flex(column, flex-start, flex-end)
+
+    .right__socialMedia
+      width: 200px
+      +flex(row, space-between, center)
+
+    .right__offer
+      margin-top: 30px
+      .right__offer__list
+
+        .right__offer__list__item
+          text-align: right
+          font-size: 18px
+          margin: 15px 0
+
+
+  .footer__bottom
+    position: absolute
+    bottom: 10px
+    left: 50%
+    width: 80vw
+    transform: translateX(-50%)
+    border-bottom: 1px solid #fff
+
+    .footer__bottom__h
+      text-align: center
+      padding: 30px 0 5px 0
+      font-size: 14px
+      font-weight: 300
+
+      a
+        color: #fff
+        text-decoration: none

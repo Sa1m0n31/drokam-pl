@@ -1,6 +1,8 @@
 import React from "react";
 
-import { graphql, useStaticQuery } from "gatsby"
+import Menu from "./Menu";
+
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 const LandingPage = () => {
@@ -30,13 +32,7 @@ const LandingPage = () => {
           <img className="topLogo__img" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-logo" />
       </div>
       <menu className="topMenu">
-        <ul className="topMenuList horizontalList">
-          <li className="topMenuList__item">Home</li>
-          <li className="topMenuList__item">O nas</li>
-          <li className="topMenuList__item">Oferta</li>
-          <li className="topMenuList__item">Portfolio</li>
-          <li className="topMenuList__item">Kontakt</li>
-        </ul>
+        <Menu />
       </menu>
       <div className="centerLogo">
         <Img className="centerLogo__img" fluid={data.centerLogo.childImageSharp.fluid} alt="drokam-logo" />

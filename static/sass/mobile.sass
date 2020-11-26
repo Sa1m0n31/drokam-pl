@@ -1,12 +1,11 @@
-/* Landing page */
+/* Landing page and page header */
 
 @media(max-width: 1300px)
-  .landingPage
     .topLogo
-      left: 5vw
+      left: 5vw !important
 
     .topMenu
-      right: 5vw
+      right: 5vw !important
 
       .topMenuList
         .topMenuList__item
@@ -14,6 +13,11 @@
 
     .btn--callToAction
       transform: translate(-50%, 100px)
+
+@media(max-width: 1000px)
+  .pageHeader__h::before
+    top: -10px !important
+    height: 6px !important
 
 /* About us */
 

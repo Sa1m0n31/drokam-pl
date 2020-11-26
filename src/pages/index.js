@@ -1,4 +1,5 @@
 import React from "react";
+import Helmet from 'react-helmet';
 
 import '../../static/sass/style.sass';
 import '../../static/sass/mobile.sass';
@@ -10,11 +11,17 @@ import Partners from "../components/Partners";
 import Footer from "../components/Footer"
 
 export default function Home() {
-  return (<div className="container">
+  return (<>
+    <Helmet>
+      <title>DroKam - najlepsze filmy w sieci</title>
+      <meta charSet="utf-8" />
+    </Helmet>
+    <div className="container">
       <LandingPage />
       <AboutUsSection />
       <Portfolio />
       <Partners />
       <Footer />
-  </div>);
+  </div>
+    </>);
 }

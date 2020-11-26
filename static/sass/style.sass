@@ -62,6 +62,34 @@ button, input
   height: 12px
   background-color: $primary
 
+.topMenu
+  color: #fff
+  text-transform: uppercase
+
+  .topMenuList
+    .topMenuList__item
+      font-size: 18px
+      font-weight: 600
+      margin: 0 50px
+
+      a
+       text-decoration: none
+       color: #fff
+       a:hover
+        opacity: .8
+
+.btn--portfolio
+  font-size: calc(20px + 12 *((100vw - 900px)/(1100)))
+  font-weight: 700
+  background-color: $dark
+  color: #fff
+  width: calc(100vw * .30)
+  max-width: 500px
+  box-shadow: 0 0 25px #1E212B91
+  +flex(row, center, center)
+  +btnSize(calc(100vw * .05))
+  max-height: 90px
+
 // Landing page
 
 .landingPage
@@ -85,15 +113,6 @@ button, input
     position: absolute
     top: 98px
     right: 100px
-    color: #fff
-    text-transform: uppercase
-
-    .topMenuList
-
-      .topMenuList__item
-        font-size: 18px
-        font-weight: 600
-        margin: 0 50px
 
   .centerLogo
     position: absolute
@@ -194,18 +213,6 @@ button, input
   .portfolio__bottom
     margin-top: 50px
     +flex(row, center, center)
-
-    .btn--portfolio
-      font-size: calc(20px + 12 *((100vw - 900px)/(1100)))
-      font-weight: 700
-      background-color: $dark
-      color: #fff
-      width: calc(100vw * .30)
-      max-width: 500px
-      box-shadow: 0 0 25px #1E212B91
-      +flex(row, center, center)
-      +btnSize(calc(100vw * .05))
-      max-height: 90px
 
 // Zaufali nam
 
@@ -331,3 +338,143 @@ button, input
       a
         color: #fff
         text-decoration: none
+
+/* Pages header */
+
+.pageHeader
+  position: relative
+  width: 100%
+  height: 350px
+
+  .headerBackground
+    position: absolute
+    width: 100%
+    height: 100%
+
+  .topLogo
+    position: absolute
+    top: 30px
+    left: 140px
+
+  .topMenu
+    position: absolute
+    top: 60px
+    right: 100px
+
+  .pageHeader__h
+    position: absolute
+    left: 50%
+    bottom: 70px
+    transform: translateX(-50%)
+    width: fit-content
+    width: -moz-max-content
+    margin: 0 auto
+    color: #fff
+    text-transform: uppercase
+    font-size: calc(30px + 20 * ((100vw - 900px)/(1100)))
+    text-align: center
+
+  .pageHeader__h::before
+    content: ""
+    position: absolute
+    top: -15px
+    left: 50%
+    transform: translateX(-50%)
+    width: 45px
+    height: 10px
+    background-color: $primary
+
+/* Oferta page */
+
+.ofertaMain
+  position: relative
+  width: 100%
+  padding: 100px 0
+  background-color: rgba(30, 33, 43, .09)
+  +flex(column, center, center)
+
+  .ofertaMain__content
+    width: 80%
+    display: grid
+    grid-template-columns: repeat(2, 48%)
+    grid-column-gap: 4%
+    grid-row-gap: 20px
+
+  .ofertaItem
+    background-color: $dark
+    box-shadow: 0 0 10px #00000080
+
+    .ofertaItem__img
+      width: 80%
+      height: calc(80% / 1.9)
+      margin: 40px auto 10px auto
+
+    .ofertaItem__label
+      color: #fff
+      text-transform: uppercase
+      font-size: calc(20px + 15 * ((100vw - 900px)/(1500)))
+      text-align: center
+      margin: 30px 0
+
+  .ofertaMain__bottom
+    margin-top: 80px
+
+    .ofertaMain__logo
+      width: 50vw
+      max-width: 530px
+      height: calc(50vw / 6.79)
+      max-height: 78px
+      margin: 0 auto
+
+    .ofertaMain__slogan
+      text-align: center
+      margin: 20px 0
+      font-size: calc(25px + 10 * ((100vw - 900px)/(1100)))
+
+    .ofertaMain__btn
+      background-color: $primary
+      margin: 50px auto 0 auto
+      box-shadow: 0 0 25px #DB2B3991
+
+/* Portfolio page */
+
+.portfolioPage
+  .portfolioPage__p
+    width: 80%
+    margin: 30px auto
+    text-align: center
+    font-size: calc(18px + 8 * ((100vw - 900px)/(1100)))
+
+  .portfolioSectionP
+    position: relative
+    display: flex
+    margin: 40px auto
+    width: 80%
+    height: 360px
+
+    img
+      width: 70px
+      height: 70px
+
+    .portfolioSection__content
+      background-color: #EAEBEC
+      width: 70%
+      height: 264px
+
+    .portfolioSection__title
+      font-size: calc(25px + 20 * ((100vw - 900px)/(1100)))
+      margin: 0 20px
+
+    .btn--zobaczWiecej
+      position: absolute
+      right: 0
+      bottom: 0
+      background-color: $primary
+      width: 250px
+      height: 50px
+      border-radius: 50px
+      font-size: 18px
+      box-shadow: 0 0 15px #DB2B3980
+
+  .portfolioSection:last-child
+    margin-bottom: 50px

@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import { Link } from 'gatsby';
 
 const Portfolio = () => {
   return (<section className="portfolioSection">
@@ -14,7 +15,9 @@ const Portfolio = () => {
         </main>
         <section className="portfolio__bottom">
           <button className="btn btn--portfolio">
-            Sprawdź nasze portfolio
+            <Link to="/portfolio">
+              Sprawdź nasze portfolio
+            </Link>
           </button>
         </section>
   </section>);

@@ -37,6 +37,13 @@ button, input
   border: none
   outline: none
 
+a
+  width: 100%
+  height: 100%
+  color: #fff
+  text-decoration: none
+  +flex(row, center, center)
+
 .horizontalList
   display: flex
 
@@ -71,6 +78,7 @@ button, input
       font-size: 18px
       font-weight: 600
       margin: 0 50px
+      cursor: pointer
 
       a
        text-decoration: none
@@ -229,13 +237,13 @@ button, input
     +flex(row, center, center)
 
     .partners__content__inside
-      width: 75%
+      width: 1000px
       overflow: hidden
-      +flex(row, space-evenly, center)
+      +flex(row, flex-start, center)
 
       .partners__content__item
-        width: 185px
-        height: 185px
+        flex: 0 0 180px
+        height: 180px
         background-color: #fff
         margin: 0 10px
         +flex(row, center, center)
@@ -311,6 +319,12 @@ button, input
       width: 200px
       +flex(row, space-between, center)
 
+      img
+        transition: .2s
+
+      img:hover
+        opacity: .8
+
     .right__offer
       margin-top: 30px
       .right__offer__list
@@ -336,8 +350,7 @@ button, input
       font-weight: 300
 
       a
-        color: #fff
-        text-decoration: none
+        display: inline
 
 /* Pages header */
 
@@ -460,6 +473,14 @@ button, input
       background-color: #EAEBEC
       width: 70%
       height: 264px
+      +flex(row, space-evenly, center)
+
+      .portfolioSection__content__img
+        width: 30%
+        height: auto
+
+      iframe
+        height: 80% !important
 
     .portfolioSection__title
       font-size: calc(25px + 20 * ((100vw - 900px)/(1100)))

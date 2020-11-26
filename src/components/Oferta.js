@@ -1,6 +1,6 @@
 import React from "react";
 
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
 const Oferta = () => {
@@ -53,7 +53,9 @@ const Oferta = () => {
       <Img className="ofertaMain__logo" fluid={data.logo.childImageSharp.fluid} alt="drokam" />
       <h3 className="ofertaMain__slogan">Sprawdź pełnie naszych możliwości.</h3>
       <button className="ofertaMain__btn btn btn--portfolio">
-        Przejdź do portfolio
+        <Link to="/portfolio">
+          Przejdź do portfolio
+        </Link>
       </button>
     </div>
   </main>);

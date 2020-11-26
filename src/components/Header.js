@@ -1,11 +1,11 @@
 import React from "react";
 
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
 import Menu from "./Menu";
 
-const Header = () => {
+const Header = ({title}) => {
   const data = useStaticQuery(graphql`
       query Header {
           header: file(relativePath: { eq: "header-background.png" }) {
@@ -21,13 +21,15 @@ const Header = () => {
   return (<header className="pageHeader">
       <Img className="headerBackground" fluid={data.header.childImageSharp.fluid} alt="drokam-background" />
       <div className="topLogo">
-        <img className="topLogo__img" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-logo" />
+        <Link to="/">
+          <img className="topLogo__img" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-logo" />
+        </Link>
       </div>
       <menu className="topMenu">
         <Menu />
       </menu>
       <h1 className="pageHeader__h">
-        Nasza oferta
+        {title}
       </h1>
   </header>);
 }

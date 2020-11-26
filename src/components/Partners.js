@@ -1,6 +1,26 @@
-import React from "react"
+import React, { useEffect, useRef } from "react";
 
 const Partners = () => {
+  const slider = useRef(null);
+
+  const scroll = (left) => {
+    let n = 200;
+    console.log("scroll");
+    if(left) {
+      console.log("left");
+      slider.current.scrollBy({
+        behavior: "smooth",
+        left: -n
+      });
+    }
+    else {
+      slider.current.scrollBy({
+        behavior: "smooth",
+        left: n
+      });
+    }
+  }
+
   return (<section className="partnersSection">
       <header className="sectionHeader">
         <h2 className="sectionHeader__h">
@@ -9,9 +29,28 @@ const Partners = () => {
       </header>
       <main className="partners__content">
         <div className="partners__content__arrow">
-          <img src={require("../../static/img/previous.png")} alt="previous" />
+          <img onClick={() => scroll(true)} src={require("../../static/img/previous.png")} alt="previous" />
         </div>
-        <div className="partners__content__inside">
+        <div ref={slider} className="partners__content__inside">
+          <div className="partners__content__item">
+            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+          </div>
+          <div className="partners__content__item">
+            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+          </div>
+          <div className="partners__content__item">
+            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+          </div>
+          <div className="partners__content__item">
+            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+          </div>
+          <div className="partners__content__item">
+            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+          </div>
+
+          <div className="partners__content__item">
+            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+          </div>
           <div className="partners__content__item">
             <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
           </div>
@@ -29,7 +68,7 @@ const Partners = () => {
           </div>
         </div>
         <div className="partners__content__arrow">
-          <img src={require("../../static/img/next.png")} alt="next" />
+          <img onClick={() => scroll(false)} src={require("../../static/img/next.png")} alt="next" />
         </div>
       </main>
   </section>);

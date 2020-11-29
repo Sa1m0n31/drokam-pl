@@ -17,7 +17,7 @@ const AboutUsSection = () => {
       }
   `);
 
-  return (<section className="aboutUsSection">
+  return (<section className="aboutUsSection" id="onas">
     <div className="aboutUsSection__left">
       <img src={require("../../static/img/drokam-sygnet-2.png")} alt="drokam-sygnet-2" />
       <h2 className="left__header">

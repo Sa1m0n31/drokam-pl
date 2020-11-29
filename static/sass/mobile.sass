@@ -1,3 +1,11 @@
+@import 'style'
+
+/* Global */
+
+@media(max-width: 700px)
+  .sectionHeader::before
+    height: 6px
+
 /* Landing page and page header */
 
 @media(max-width: 1300px)
@@ -29,8 +37,6 @@
     .right__img
       transform: translateY(0) !important
 
-
-
 @media(max-width: 1300px)
   .aboutUsSection
     padding: 30px 5vw
@@ -42,6 +48,31 @@
         .left__content__p
           font-size: 15px
 
+@media(max-width: 900px)
+  .aboutUsSection
+    flex-direction: column
+    align-items: center
+    height: fit-content
+
+    .aboutUsSection__left
+      width: 80%
+
+      .left__header
+        font-size: 16px
+
+      .left__content
+        .left__content__p
+          font-size: 14px
+
+    .aboutUsSection__right
+      width: 80%
+      margin: 30px 0
+      justify-content: center
+
+      .right__img
+        width: 300px
+        height: calc(300px / 1.78)
+
 /* Portfolio */
 
 @media(max-width: 1600px)
@@ -52,6 +83,30 @@
   .portfolioSection
     .portfolio__content
       padding: 0 5vw 0 5vw
+
+@media(max-width: 800px)
+.portfolio__bottom
+  .btn--portfolio
+    width: 250px
+    height: 50px
+    border-radius: 50px
+
+@media(max-width: 700px)
+  .portfolioSection
+    padding-top: 70px
+
+    .sectionHeader
+      margin-bottom: 25px
+
+    .portfolio__content
+      flex-direction: column
+      max-height: none
+      height: fit-content
+
+      .portfolio__content__item
+        width: 300px
+        height: calc(300px / 1.5)
+        margin: 25px 0
 
 /* Zaufali nam */
 
@@ -70,9 +125,65 @@
       .footer__left__logo
         width: 28vw
         height: calc(28vw / 6.73)
+        min-width: 170px
+        min-height: 26px
 
       .daneKontaktowe__header__h, .daneKontaktowe__content .daneKontaktowe__content__item .kontaktItem
-        font-size: calc(19px + 10 * ((100vw - 900px)/(400)))
+        font-size: calc(19px + 10 * ((100vw - 300px)/(1000)))
 
       .daneKontaktowe__content .daneKontaktowe__content__item
         grid-template-columns: 50px 200px
+
+@media(max-width: 900px)
+  .footer
+    padding: 0 50px
+
+@media(max-width: 700px)
+  .footer
+    flex-direction: column
+    justify-content: center
+    height: auto
+    padding-top: 50px
+
+    .footer__left
+      width: 100%
+      +flex(column, center, center)
+
+      .daneKontaktowe__header__h
+        display: none
+
+      .daneKontaktowe__content
+        .daneKontaktowe__content__item
+          justify-items: center
+
+    .footer__right
+      width: 100%
+      margin-bottom: 60px
+      +flex(column, center, center)
+
+      .right__offer
+        .right__offer__list
+          .right__offer__list__item
+            text-align: center
+            font-size: 14px
+
+/* Oferta */
+
+@media(max-width: 700px)
+  .ofertaMain
+    padding-top: 50px
+
+    .ofertaMain__content
+      grid-template-columns: 100%
+      width: 300px
+
+    .ofertaMain__bottom
+      .ofertaMain__slogan
+        padding: 0 20px
+
+      .ofertaMain__btn
+        width: 250px
+        height: 50px
+        border-radius: 50px
+        font-size: 14px
+        margin-top: 20px

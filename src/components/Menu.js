@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from 'gatsby';
+import { Link, navigate } from 'gatsby';
 
 const Menu = ({frontPage}) => {
   const oNasScroll = () => {
@@ -14,6 +14,9 @@ const Menu = ({frontPage}) => {
         });
         console.log("SSCROLL!!");
       }
+    }
+    else {
+      navigate("/#onas");
     }
   }
 

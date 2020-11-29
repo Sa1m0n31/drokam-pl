@@ -417,17 +417,38 @@ a
     background-color: $dark
     box-shadow: 0 0 10px #00000080
 
-    .ofertaItem__img
+    .ofertaItem__link
       width: 80%
       height: calc(80% / 1.9)
       margin: 40px auto 10px auto
+      overflow: hidden !important
+
+      .ofertaItem__img
+        width: 100%
+        height: 100%
+        transition: .2s ease-in-out
+
+      .ofertaItem__img:hover
+        transform: scale(1.2)
 
     .ofertaItem__label
+      position: relative
       color: #fff
       text-transform: uppercase
       font-size: calc(20px + 15 * ((100vw - 900px)/(1500)))
       text-align: center
       margin: 30px 0
+
+    .ofertaItem__label::before
+      content: ""
+      position: absolute
+      top: -10px
+      left: 50%
+      transform: translateX(-50%)
+      height: 4px
+      width: 50px
+      background-color: $primary
+      transform-origin: 50%
 
   .ofertaMain__bottom
     margin-top: 80px
@@ -499,3 +520,76 @@ a
 
   .portfolioSection:last-child
     margin-bottom: 50px
+
+/* Portoflio subpage */
+
+.portfolioSubpageHeader
+  position: relative
+  margin: 50px 0
+  text-transform: uppercase
+  text-align: center
+  font-size: calc(30px + 30 * ((100vw - 900px)/(1100)))
+
+.portfolioSubpageHeader::before
+  content: ""
+  position: absolute
+  top: -15px
+  left: 50%
+  transform: translateX(-50%)
+  width: 85px
+  height: 10px
+  background-color: $primary
+
+iframe
+  width: 100% !important
+  height: 100% !important
+
+.filmyPromocyjneTop
+  display: grid
+  grid-template-columns: calc((100vw - 280px) / 10 * 3 - 7px) calc((100vw - 280px) / 10 * 4 - 7px) calc((100vw - 280px) / 10 * 3 - 7px)
+  grid-template-rows: repeat(2, 225px)
+  grid-column-gap: 10px
+  grid-row-gap: 10px
+  justify-content: center
+  margin-bottom: 100px
+
+  .filmyPromocyjne__first
+    grid-column: 1
+    grid-row: 1
+
+  .filmyPromocyjne__second
+    grid-column: 1
+    grid-row: 2
+
+  .filmyPromocyjne__third
+    grid-column: 2
+    grid-row: 1 / span 2
+
+  .filmyPromocyjne__fourth
+    grid-column: 3
+    grid-row: 1
+
+  .filmyPromocyjne__fifth
+    grid-column: 3
+    grid-row: 2
+
+.filmyPromocyjneBottom
+  display: grid
+  grid-template-columns: calc((100vw - 280px) / 3 * 2 - 5px) calc((100vw - 280px) / 3 - 5px)
+  grid-template-rows: repeat(2, 302px)
+  grid-column-gap: 10px
+  grid-row-gap: 10px
+  margin: 180px 0 100px 0
+  justify-content: center
+
+  .filmyPromocyjne__first
+    grid-column: 1
+    grid-row: 1 / span 2
+
+  .filmyPromocyjne__second
+    grid-column: 2
+    grid-row: 1
+
+  .filmyPromocyjne__third
+    grid-column: 2
+    grid-row: 2

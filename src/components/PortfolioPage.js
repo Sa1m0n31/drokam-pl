@@ -1,6 +1,6 @@
 import React from "react";
 
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
 const PortfolioPage = () => {
@@ -38,13 +38,13 @@ const PortfolioPage = () => {
         <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
       </div>
       <button className="btn btn--portfolio btn--zobaczWiecej">
-        Zobacz więcej
+        <Link to="/filmy-promocyjne">Zobacz więcej</Link>
       </button>
     </section>
     <section className="portfolioSectionP filmyPromocyjne">
       <img src={require("../../static/img/sygnet-dark.png")} alt="drokam-portfolio" />
       <h2 className="portfolioSection__title">
-        Filmy promocyjne
+          Filmy promocyjne
       </h2>
       <div className="portfolioSection__content">
         <iframe className="portfolioSection__content__img" src="https://www.youtube.com/embed/BXDYP9Bt0AE" frameBorder="0"

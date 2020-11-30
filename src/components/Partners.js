@@ -29,7 +29,7 @@ const Partners = () => {
       </header>
       <main className="partners__content">
         <div className="partners__content__arrow">
-          <img onClick={() => scroll(true)} src={require("../../static/img/previous.png")} alt="previous" />
+          <img onClick={() => scroll(true)} src={require("../../static/img/prev.png")} alt="previous" />
         </div>
         <div ref={slider} className="partners__content__inside">
           <div className="partners__content__item">

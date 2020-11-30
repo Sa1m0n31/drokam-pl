@@ -27,7 +27,12 @@ $dark: #1E212B
   box-sizing: border-box
   font-family: 'Hind Siliguri', sans-serif
 
+.stopScrolling
+  width: 100vh
+  overflow-y: hidden
+
 body, html
+  position: relative
   overflow-x: hidden
 
 ul
@@ -52,7 +57,7 @@ a
 
 .sectionHeader
   position: relative
-  color: $dark
+  color: #fff
   text-align: center
   text-transform: uppercase
   font-size: calc(28px + 20 * ((100vw - 900px)/1100))
@@ -89,7 +94,7 @@ a
 .btn--portfolio
   font-size: calc(20px + 12 *((100vw - 900px)/(1100)))
   font-weight: 700
-  background-color: $dark
+  background-color: $primary
   color: #fff
   width: calc(100vw * .30)
   max-width: 500px
@@ -97,6 +102,15 @@ a
   +flex(row, center, center)
   +btnSize(calc(100vw * .05))
   max-height: 90px
+
+.red
+  color: $primary
+
+.usluga__item__checked
+  border: none !important
+
+.d-none
+  display: none
 
 // Landing page
 
@@ -112,15 +126,35 @@ a
     max-height: 100vh
     min-height: 800px
 
-  .topLogo
-    position: absolute
-    top: 65px
-    left: 140px
-
   .topMenu
     position: absolute
-    top: 98px
-    right: 100px
+    top: 0
+    left: 50%
+    width: 1300px
+    height: 55px
+    transform: translateX(-50%)
+    background: rgba(0, 0, 0, .8)
+    border-radius: 0 0 30px 30px
+
+    .topMenuList
+      height: 100%
+      +flex(row, center, center)
+
+      .topLogo__link
+        width: 43px
+        height: 43px
+
+        .topLogo__img
+          width: 100%
+          height: 100%
+
+      .topMenuList__item
+        font-size: 15px
+        transition: .2s
+        +flex(row, center, center)
+
+      .topMenuList__item:hover
+        opacity: .8
 
   .centerLogo
     position: absolute
@@ -150,17 +184,28 @@ a
     +btnSize(70px)
     +flex(row, center, center)
 
+// Front container
+
+.frontContainer
+  position: relative
+  width: 100%
+  //height: 100vh
+  overflow-y: scroll
+  background: url("./../img/drokam-front-background.png") fixed
+
+.frontContainer::-webkit-scrollbar
+  width: 0
+
 // O nas
 
-.aboutUsSection
-  background: rgba(30, 33, 43, .09)
-  color: $dark
+.infoBox
+  color: #fff
   width: 100%
   height: 444px
   display: flex
   padding: 30px 140px
 
-  .aboutUsSection__left
+  .infoBox__left
     width: 50%
 
     .left__header
@@ -171,7 +216,7 @@ a
       .left__content__p
         margin: 20px 0
 
-  .aboutUsSection__right
+  .infoBox__right
     position: relative
     width: 50%
     +flex(row, flex-end, center)
@@ -182,9 +227,9 @@ a
       height: calc((100vw * 0.35) / 1.78)
       max-width: 701px
       max-height: 393px
-      transform: translateY(70px)
+      z-index: 2
 
-  .aboutUsSection__right::after
+  .infoBox__right::after
     content: ""
     position: absolute
     left: 70px
@@ -193,14 +238,12 @@ a
     height: calc((100vw * 0.35) / 1.78 + 20px)
     max-width: 610px
     max-height: 440px
-    background-color: #1E212B
-    z-index: -1
-    transform: translateY(70px)
+    background-color: #2E2E2E
 
 // Portfolio
 
 .portfolioSection
-  padding-top: 200px
+  padding-top: 120px
   width: 100%
 
   .portfolio__content
@@ -222,6 +265,9 @@ a
     margin-top: 50px
     +flex(row, center, center)
 
+    .btn--portfolio
+      background-color: $primary
+
 // Zaufali nam
 
 .partnersSection
@@ -232,7 +278,7 @@ a
     max-width: 1300px
     height: 350px
     margin: 0 auto
-    background: url("../img/zaufali-nam-tlo.png")
+    background: url("../img/drokam-partners.png")
     background-size: cover
     +flex(row, center, center)
 
@@ -363,11 +409,6 @@ a
     position: absolute
     width: 100%
     height: 100%
-
-  .topLogo
-    position: absolute
-    top: 30px
-    left: 140px
 
   .topMenu
     position: absolute
@@ -593,3 +634,114 @@ iframe
   .filmyPromocyjne__third
     grid-column: 2
     grid-row: 2
+
+// Form
+
+.formSection
+  color: #fff
+  width: 100%
+  padding: 0 140px
+  margin-bottom: 90px
+  +flex(column, center, center)
+
+  .formSection__header
+    width: 100%
+
+    h2
+      font-size: 24px
+      font-weight: 400
+
+    h3
+      font-size: 16px
+      font-weight: 300
+
+  .formSection__main
+    display: grid
+    grid-template-columns: calc((100vw - 280px) * 0.3 - 15px) calc((100vw - 280px) * 0.7 - 15px)
+    grid-template-rows: repeat(4, 63px)
+    grid-column-gap: 30px
+    grid-row-gap: 20px
+    margin-top: 30px
+
+    input, textarea
+      width: 100%
+      height: 100%
+      border: none
+      outline: none
+      padding: 15px
+      font-size: 18px
+      opacity: .85
+      transition: .2s
+
+    input:focus, textarea:focus
+      opacity: 1 !important
+
+    input
+      border-radius: 63px
+
+    textarea
+      border-radius: 31px
+      resize: none
+      padding: 25px
+
+    .form__name
+      grid-column: 1
+      grid-row: 1
+
+    .form__company
+      grid-column: 1
+      grid-row: 2
+
+    .form__msg
+      grid-column: 2
+      grid-row: 1 / span 3
+
+    .form__usluga
+      flex-wrap: wrap
+      margin-top: 30px
+      +flex(row, center, center)
+
+      .form__usluga__header
+        width: 100%
+        font-size: 20px
+        margin-bottom: 20px
+        font-weight: 400
+
+      .form__usluga__item
+        width: 50%
+        margin-bottom: 15px
+        +flex(row, center, center)
+
+        label
+          width: 100%
+          cursor: pointer
+          +flex(row, flex-start, center)
+
+          .usluga__item__btn
+            position: relative
+            width: 20px
+            height: 20px
+            border: 4px solid #fff
+            background: transparent
+            border-radius: 50%
+            margin-right: 15px
+
+            img
+              position: absolute
+              top: 0
+              left: 0
+              width: 100%
+              height: 100%
+
+      .form__usluga__item:nth-child(3), .form__usluga__item:last-child
+        padding-left: 20px
+
+    .btn--form
+      grid-column: 2
+      grid-row: 4
+      justify-self: flex-end
+      height: 61px
+      width: 330px
+      border-radius: 61px
+      font-size: 18px
+      font-weight: 500

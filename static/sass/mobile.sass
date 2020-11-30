@@ -30,31 +30,31 @@
 /* About us */
 
 @media(max-width: 1600px)
-  .aboutUsSection__right::after
+  .infoBox__right::after
     display: none !important
 
-  .aboutUsSection__right
+  .infoBox__right
     .right__img
       transform: translateY(0) !important
 
 @media(max-width: 1300px)
-  .aboutUsSection
+  .infoBox
     padding: 30px 5vw
 
 @media(max-width: 1000px)
-  .aboutUsSection
-    .aboutUsSection__left
+  .infoBox
+    .infoBox__left
       .left__content
         .left__content__p
           font-size: 15px
 
 @media(max-width: 900px)
-  .aboutUsSection
+  .infoBox
     flex-direction: column
     align-items: center
     height: fit-content
 
-    .aboutUsSection__left
+    .infoBox__left
       width: 80%
 
       .left__header
@@ -64,7 +64,7 @@
         .left__content__p
           font-size: 14px
 
-    .aboutUsSection__right
+    .infoBox__right
       width: 80%
       margin: 30px 0
       justify-content: center
@@ -187,3 +187,27 @@
         border-radius: 50px
         font-size: 14px
         margin-top: 20px
+
+/* Form */
+
+@media(max-width: 1600px)
+  .formSection
+    margin-bottom: 150px
+
+@media(max-width: 1300px)
+  .formSection
+    padding-left: 5vw
+    padding-right: 5vw
+
+    .formSection__main
+      grid-template-columns: calc((90vw) * 0.3 - 10px) calc((90vw) * 0.7 - 10px)
+      grid-template-rows: repeat(4, 63px)
+      grid-column-gap: 20px
+
+      input, textarea
+        font-size: 16px
+
+      .form__usluga
+        .form__usluga__item
+          width: 100%
+          padding-left: 15px !important

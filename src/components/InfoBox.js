@@ -3,7 +3,7 @@ import React from "react";
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery } from "gatsby";
 
-const AboutUsSection = () => {
+const InfoBox = ({title, p1, p2, p3}) => {
 
   const data = useStaticQuery(graphql`
       query AbousUsSectionQuery {
@@ -17,28 +17,28 @@ const AboutUsSection = () => {
       }
   `);
 
-  return (<section className="aboutUsSection" id="onas">
-    <div className="aboutUsSection__left">
+  return (<section className="infoBox" id="onas">
+    <div className="infoBox__left">
       <img src={require("../../static/img/drokam-sygnet-2.png")} alt="drokam-sygnet-2" />
       <h2 className="left__header">
-        Jesteśmy młodymi kreatywnymi ludźmi,<br/>dla których film i fotografia to sposób na życie!
+        {title}
       </h2>
       <div className="left__content">
         <p className="left__content__p">
-          Od 5 lat wprowadzamy do naszego portfolio coraz to nowsze projekty oraz współprace z firmami.
+          {p1}
         </p>
         <p className="left__content__p">
-          Podczas tworzenia każdego projektu sugerujemy się indywidualnymi potrzebami klienta oraz dostarczeniem materiałów najwyższej jakości.
+          {p2}
         </p>
         <p className="left__content__p">
-          Wszystkie fotografie oraz filmy umieszczone na stronie to tylko i wyłącznie nasze dzieła.
+          {p3}
         </p>
       </div>
     </div>
-    <div className="aboutUsSection__right">
+    <div className="infoBox__right">
       <Img className="right__img" fluid={data.aboutUs.childImageSharp.fluid} alt="drokam-o-nas" />
     </div>
   </section>);
 }
 
-export default AboutUsSection;
+export default InfoBox;

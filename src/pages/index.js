@@ -5,10 +5,8 @@ import '../../static/sass/style.sass';
 import '../../static/sass/mobile.sass';
 
 import LandingPage from "../components/LandingPage";
-import AboutUsSection from "../components/AboutUsSection";
-import Portfolio from "../components/Portfolio";
-import Partners from "../components/Partners";
 import Footer from "../components/Footer"
+import FrontContainer from "../components/FrontContainer";
 
 export default function Home() {
   return (<>
@@ -18,9 +16,7 @@ export default function Home() {
     </Helmet>
     <div className="container">
       <LandingPage />
-      <AboutUsSection />
-      <Portfolio />
-      <Partners />
+      <FrontContainer />
       <Footer />
   </div>
     </>);

@@ -1,6 +1,6 @@
 import React from "react";
 
-import AboutUsSection from "./AboutUsSection";
+import InfoBox from "./InfoBox";
 
 const FilmyPromocyjne = () => {
   return (<main className="portfolioSubpage">
@@ -29,7 +29,7 @@ const FilmyPromocyjne = () => {
               allowFullScreen></iframe>
     </div>
 
-    <AboutUsSection />
+    <InfoBox />
 
     <div className="filmyPromocyjneBottom">
       <iframe className="filmyPromocyjne__first" src="https://www.youtube.com/embed/BXDYP9Bt0AE" frameBorder="0"

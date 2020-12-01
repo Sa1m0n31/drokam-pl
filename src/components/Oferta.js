@@ -22,7 +22,7 @@ const Oferta = () => {
                   }
               }
           }
-          logo: file(relativePath: { eq: "drokam-logo-dark.png" }) {
+          logo: file(relativePath: { eq: "drokam-logo-mobile.png" }) {
               childImageSharp {
                   fluid(maxWidth: 831, maxHeight: 123) {
                       ...GatsbyImageSharpFluid

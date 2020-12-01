@@ -19,7 +19,7 @@ const InfoBox = ({title, p1, p2, p3}) => {
 
   return (<section className="infoBox" id="onas">
     <div className="infoBox__left">
-      <img src={require("../../static/img/drokam-sygnet-2.png")} alt="drokam-sygnet-2" />
+      <img className="infoBox__sygnet" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-sygnet-2" />
       <h2 className="left__header">
         {title}
       </h2>

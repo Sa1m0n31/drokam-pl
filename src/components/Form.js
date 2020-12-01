@@ -1,10 +1,14 @@
 import React from "react";
 
+import { gsap } from 'gsap/all';
+
 export default class Form extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       nameInput: React.createRef(),
+      formRef: React.createRef(),
+      afterSubmitRef: React.createRef(),
       name: "",
       company: "",
       msg: "",
@@ -15,6 +19,7 @@ export default class Form extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleButton = this.handleButton.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleButton(e) {
@@ -52,8 +57,17 @@ export default class Form extends React.Component {
     });
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+
+    /* Simulation - everything ok */
+    console.log("submit");
+    gsap.fromTo(this.state.formRef.current, { x: 0 }, { x: -3000, duration: 1 });
+    gsap.fromTo(this.state.afterSubmitRef.current, { x: 0 }, { x: -3000, duration: 1 });
+  }
+
   render() {
-    return (<section className="formSection">
+    return (<section className="formSection" id="kontakt" ref={this.state.formRef}>
       <header className="formSection__header">
         <h2>Wpisz wymagane dane i wyślij formularz:</h2>
         <h3><span className="red">*</span> - pole wymagane</h3>
@@ -116,10 +130,14 @@ export default class Form extends React.Component {
             </label>
           </div>
         </div>
-        <button className="btn btn--portfolio btn--form">
+        <button type="submit" className="btn btn--portfolio btn--form"
+                onClick={e => this.handleSubmit(e)}>
           Wyślij formularz
         </button>
       </form>
+      <div className="formAfterSubmit" ref={this.state.afterSubmitRef}>
+        <h2>Dzięki!</h2>
+      </div>
     </section>);
   }
 

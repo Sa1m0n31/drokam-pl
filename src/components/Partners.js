@@ -28,7 +28,8 @@ const Partners = () => {
         </h2>
       </header>
       <main className="partners__content">
-        <div className="partners__content__arrow">
+        <img className="partnersBackground" src={require("../../static/img/drokam-partners.png")} alt="drokam-partnerzy-tlo" />
+        <div className="partners__content__arrow d-none">
           <img onClick={() => scroll(true)} src={require("../../static/img/prev.png")} alt="previous" />
         </div>
         <div ref={slider} className="partners__content__inside">
@@ -44,30 +45,8 @@ const Partners = () => {
           <div className="partners__content__item">
             <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
           </div>
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
-
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
-          <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
-          </div>
         </div>
-        <div className="partners__content__arrow">
+        <div className="partners__content__arrow d-none">
           <img onClick={() => scroll(false)} src={require("../../static/img/next.png")} alt="next" />
         </div>
       </main>

@@ -6,6 +6,7 @@ import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from "gatsby-image";
 
 import { gsap } from 'gsap/all';
+import HamburgerMenu from "./HamburgerMenu"
 
 const LandingPage = () => {
   const landingPage = useRef(null);
@@ -17,6 +18,13 @@ const LandingPage = () => {
           landing: file(relativePath: { eq: "drokam-landing.png" }) {
               childImageSharp {
                   fluid(maxWidth: 2000, maxHeight: 1200) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          landingMobile: file(relativePath: { eq: "drokam-landing-mobile.png" }) {
+              childImageSharp {
+                  fluid(maxWidth: 414, maxHeight: 736) {
                       ...GatsbyImageSharpFluid
                   }
               }
@@ -75,11 +83,14 @@ const LandingPage = () => {
 
   return (<div className="landingPage" ref={landingPage} onMouseMove={e => handleMouseMove(e)}>
       <Img className="landingPageImg" fluid={data.landing.childImageSharp.fluid} alt="drokam" />
+      <Img className="landingPageImg landingPageImg--mobile" fluid={data.landingMobile.childImageSharp.fluid} alt="drokam" />
       <menu className="topMenu">
         <Menu frontPage={true} />
+        <HamburgerMenu />
       </menu>
       <div className="centerLogo">
         <Img className="centerLogo__img" fluid={data.centerLogo.childImageSharp.fluid} alt="drokam-logo" />
+        <img className="centerLogo__img--mobile" src={require("../../static/img/drokam-logo-mobile.png")} alt="drokam-logo" />
       </div>
     {/*<button className="btn btn--callToAction">
         Poznaj nas!

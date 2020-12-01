@@ -3,12 +3,12 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
-import Menu from "./Menu";
+import PageMenu from "./PageMenu"
 
 const Header = ({title}) => {
   const data = useStaticQuery(graphql`
       query Header {
-          header: file(relativePath: { eq: "header-background.png" }) {
+          header: file(relativePath: { eq: "drokam-header-background.png" }) {
               childImageSharp {
                   fluid(maxWidth: 1920, maxHeight: 350) {
                       ...GatsbyImageSharpFluid
@@ -26,7 +26,7 @@ const Header = ({title}) => {
         </Link>
       </div>
       <menu className="topMenu">
-        <Menu />
+        <PageMenu />
       </menu>
       <h1 className="pageHeader__h">
         {title}

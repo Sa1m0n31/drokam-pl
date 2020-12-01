@@ -2,11 +2,11 @@ import React from "react";
 
 import { Link, navigate } from 'gatsby';
 
-const Menu = ({frontPage}) => {
+const PageMenu = ({frontPage}) => {
   const oNasScroll = () => {
     if(frontPage) {
       if(typeof document !== 'undefined') {
-        const oNasSection = document.querySelector("#onas");
+        const oNasSection = document.querySelector(".aboutUsSection");
         oNasSection.scrollIntoView({
           behavior: "smooth",
           top: 0,
@@ -36,9 +36,6 @@ const Menu = ({frontPage}) => {
   }
 
   return (<ul className="topMenuList horizontalList">
-    <Link className="topLogo__link" to="/">
-      <img className="topLogo__img" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-logo" />
-    </Link>
     <li className="topMenuList__item"><Link to="/">Home</Link></li>
     <li onClick={oNasScroll} className="topMenuList__item">O nas</li>
     <li className="topMenuList__item"><Link to="/oferta">Oferta</Link></li>
@@ -47,4 +44,4 @@ const Menu = ({frontPage}) => {
   </ul>)
 };
 
-export default Menu;
+export default PageMenu;

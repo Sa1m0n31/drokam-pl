@@ -6,6 +6,7 @@
 $primary: #DB2B39
 $aboutBackground: #1E212B91
 $dark: #1E212B
+$grey: #2E2E2E
 
 // Mixins
 
@@ -110,9 +111,15 @@ a
   border: none !important
 
 .d-none
+  display: none !important
+
+.centerLogo__img--mobile, .landingPageImg--mobile
   display: none
 
 // Landing page
+
+.hamburgerMenu
+  display: none
 
 .landingPage
   height: fit-content
@@ -192,6 +199,7 @@ a
   //height: 100vh
   overflow-y: scroll
   background: url("./../img/drokam-front-background.png") fixed
+  scrollbar-width: none
 
 .frontContainer::-webkit-scrollbar
   width: 0
@@ -203,7 +211,11 @@ a
   width: 100%
   height: 444px
   display: flex
-  padding: 30px 140px
+  padding: 50px 140px 20px 140px
+
+  .infoBox__sygnet
+    width: 45px
+    height: 45px
 
   .infoBox__left
     width: 50%
@@ -219,6 +231,7 @@ a
   .infoBox__right
     position: relative
     width: 50%
+    transform: translateY(40px)
     +flex(row, flex-end, center)
 
     .right__img
@@ -234,8 +247,8 @@ a
     position: absolute
     left: 70px
     display: block
-    width: calc(100vw * 0.25)
-    height: calc((100vw * 0.35) / 1.78 + 20px)
+    width: calc(100vw * 0.35)
+    height: calc((100vw * 0.37) / 1.78 + 20px)
     max-width: 610px
     max-height: 440px
     background-color: #2E2E2E
@@ -274,20 +287,28 @@ a
   padding: 180px 0 50px 0
 
   .partners__content
+    position: relative
     width: calc(100vw * .7)
     max-width: 1300px
     height: 350px
     margin: 0 auto
-    background: url("../img/drokam-partners.png")
-    background-size: cover
     +flex(row, center, center)
+
+    .partnersBackground
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
 
     .partners__content__inside
       width: 1000px
       overflow: hidden
-      +flex(row, flex-start, center)
+      +flex(row, space-evenly, center)
 
       .partners__content__item
+        position: relative
+        z-index: 2
         flex: 0 0 180px
         height: 180px
         background-color: #fff
@@ -405,6 +426,11 @@ a
   width: 100%
   height: 350px
 
+  .topLogo
+    position: absolute
+    top: 30px
+    left: 60px
+
   .headerBackground
     position: absolute
     width: 100%
@@ -444,7 +470,7 @@ a
   position: relative
   width: 100%
   padding: 100px 0
-  background-color: rgba(30, 33, 43, .09)
+  background: url("./../img/drokam-oferta-background.png") fixed
   +flex(column, center, center)
 
   .ofertaMain__content
@@ -455,18 +481,22 @@ a
     grid-row-gap: 20px
 
   .ofertaItem
-    background-color: $dark
+    width: 100%
+    height: 100%
+    background-color: $grey
     box-shadow: 0 0 10px #00000080
 
     .ofertaItem__link
       width: 80%
-      height: calc(80% / 1.9)
+      height: calc(80vw * 0.44 / 1.9)
       margin: 40px auto 10px auto
       overflow: hidden !important
+      border: 3px solid #fff
 
       .ofertaItem__img
         width: 100%
         height: 100%
+        transform: scale(1.03)
         transition: .2s ease-in-out
 
       .ofertaItem__img:hover
@@ -504,6 +534,7 @@ a
     .ofertaMain__slogan
       text-align: center
       margin: 20px 0
+      color: #fff
       font-size: calc(25px + 10 * ((100vw - 900px)/(1100)))
 
     .ofertaMain__btn
@@ -640,12 +671,13 @@ iframe
 .formSection
   color: #fff
   width: 100%
-  padding: 0 140px
+  padding: 30px 140px
   margin-bottom: 90px
   +flex(column, center, center)
 
   .formSection__header
     width: 100%
+    max-width: 1700px
 
     h2
       font-size: 24px
@@ -656,8 +688,10 @@ iframe
       font-weight: 300
 
   .formSection__main
+    width: calc(100vw - 280px)
+    max-width: 1700px
     display: grid
-    grid-template-columns: calc((100vw - 280px) * 0.3 - 15px) calc((100vw - 280px) * 0.7 - 15px)
+    grid-template-columns: calc(30% - 15px) calc(70% - 15px)
     grid-template-rows: repeat(4, 63px)
     grid-column-gap: 30px
     grid-row-gap: 20px
@@ -745,3 +779,8 @@ iframe
       border-radius: 61px
       font-size: 18px
       font-weight: 500
+
+  .formAfterSubmit
+    color: #ffffff
+    text-align: center
+    transform: translateX(3000px)

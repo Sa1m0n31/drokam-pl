@@ -28,9 +28,8 @@ $grey: #2E2E2E
   box-sizing: border-box
   font-family: 'Hind Siliguri', sans-serif
 
-.stopScrolling
-  width: 100vh
-  overflow-y: hidden
+.container
+  background: #000
 
 body, html
   position: relative
@@ -93,7 +92,7 @@ a
         opacity: .8
 
 .btn--portfolio
-  font-size: calc(20px + 12 *((100vw - 900px)/(1100)))
+  font-size: calc(20px + 10 *((100vw - 900px)/(1100)))
   font-weight: 700
   background-color: $primary
   color: #fff
@@ -103,6 +102,18 @@ a
   +flex(row, center, center)
   +btnSize(calc(100vw * .05))
   max-height: 90px
+
+.btn--infobox
+  margin-top: 50px
+
+.p--infobox
+  font-size: calc(18px + 18 * ((100vw - 900px)/(1100)))
+
+.header--infobox
+  font-size: calc(18px + 25 * ((100vw - 900px)/(1100)))
+
+.section--infobox
+  background: rgba(255, 255, 255, .1)
 
 .red
   color: $primary
@@ -142,6 +153,7 @@ a
     transform: translateX(-50%)
     background: rgba(0, 0, 0, .8)
     border-radius: 0 0 30px 30px
+    z-index: 10
 
     .topMenuList
       height: 100%
@@ -207,7 +219,6 @@ a
 // O nas
 
 .infoBox
-  color: #fff
   width: 100%
   height: 444px
   display: flex
@@ -223,10 +234,12 @@ a
     .left__header
       font-size: calc(18px + 18 * ((100vw - 900px)/(1100)))
       font-weight: 700
+      color: #fff
 
     .left__content
       .left__content__p
         margin: 20px 0
+        color: #fff
 
   .infoBox__right
     position: relative
@@ -545,16 +558,19 @@ a
 /* Portfolio page */
 
 .portfolioPage
+
   .portfolioPage__p
     width: 80%
-    margin: 30px auto
+    padding: 30px
+    margin: 0 auto
     text-align: center
     font-size: calc(18px + 8 * ((100vw - 900px)/(1100)))
+    color: #fff
 
   .portfolioSectionP
     position: relative
     display: flex
-    margin: 40px auto
+    margin: 40px auto 100px auto
     width: 80%
     height: 360px
 
@@ -563,21 +579,33 @@ a
       height: 70px
 
     .portfolioSection__content
-      background-color: #EAEBEC
+      background-color: #2E2E2E
       width: 70%
       height: 264px
       +flex(row, space-evenly, center)
 
-      .portfolioSection__content__img
+      .portfolioSection__content__player
+        position: relative
+        z-index: 2
+        background: transparent
         width: 30%
         height: auto
+        cursor: pointer
 
-      iframe
-        height: 80% !important
+        .portfolioSection__content__img
+          width: 100%
+          height: 100%
+          position: absolute
+          z-index: 1
+
+          *
+            z-index: 1 !important
 
     .portfolioSection__title
       font-size: calc(25px + 20 * ((100vw - 900px)/(1100)))
       margin: 0 20px
+      color: #fff
+      width: 400px
 
     .btn--zobaczWiecej
       position: absolute
@@ -590,6 +618,18 @@ a
       font-size: 18px
       box-shadow: 0 0 15px #DB2B3980
 
+  .portfolioSectionP::after
+    content: ""
+    position: absolute
+    bottom: -30px
+    left: 0
+    width: 100%
+    height: 1px
+    background: #fff
+
+  .portfolioSectionP:last-child::after
+    display: none
+
   .portfolioSection:last-child
     margin-bottom: 50px
 
@@ -601,6 +641,7 @@ a
   text-transform: uppercase
   text-align: center
   font-size: calc(30px + 30 * ((100vw - 900px)/(1100)))
+  color: #fff
 
 .portfolioSubpageHeader::before
   content: ""
@@ -612,10 +653,6 @@ a
   height: 10px
   background-color: $primary
 
-iframe
-  width: 100% !important
-  height: 100% !important
-
 .filmyPromocyjneTop
   display: grid
   grid-template-columns: calc((100vw - 280px) / 10 * 3 - 7px) calc((100vw - 280px) / 10 * 4 - 7px) calc((100vw - 280px) / 10 * 3 - 7px)
@@ -624,6 +661,11 @@ iframe
   grid-row-gap: 10px
   justify-content: center
   margin-bottom: 100px
+  color: #fff
+
+  *
+    width: 100%
+    height: 100%
 
   .filmyPromocyjne__first
     grid-column: 1
@@ -653,6 +695,10 @@ iframe
   grid-row-gap: 10px
   margin: 180px 0 100px 0
   justify-content: center
+
+  *
+    width: 100%
+    height: 100%
 
   .filmyPromocyjne__first
     grid-column: 1
@@ -709,6 +755,7 @@ iframe
 
     input:focus, textarea:focus
       opacity: 1 !important
+      border: 3px solid $primary
 
     input
       border-radius: 63px
@@ -759,6 +806,7 @@ iframe
             background: transparent
             border-radius: 50%
             margin-right: 15px
+            z-index: 2
 
             img
               position: absolute
@@ -766,6 +814,7 @@ iframe
               left: 0
               width: 100%
               height: 100%
+              z-index: 1
 
       .form__usluga__item:nth-child(3), .form__usluga__item:last-child
         padding-left: 20px
@@ -784,3 +833,137 @@ iframe
     color: #ffffff
     text-align: center
     transform: translateX(3000px)
+
+/* Youtube */
+
+.youtubeImg
+  width: 800px
+  height: 500px
+
+.yt
+  position: absolute
+  left: 0
+
+.youtube
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background: rgba(0, 0, 0, .5)
+  z-index: 10
+  +flex(row, center, center)
+
+  iframe
+    width: 800px
+    height: 500px
+
+  .youtube__exit
+    position: absolute
+    top: 20px
+    right: 80px
+    font-size: 100px
+    color: $primary
+    z-index: 11
+    cursor: pointer
+    background: transparent
+
+// Portfolio subpages
+
+.portfolioSubpage__item
+  cursor: pointer
+
+// Fotografie reklamowe
+
+.portfolioSubpage__fotografieReklamowe
+  width: 100%
+  padding: 30px 140px
+
+  .fotografieReklamowe__firstRow, .fotografieReklamowe__secondRow, .fotografieReklamowe__thirdRow
+    display: flex
+    width: 100%
+    position: relative
+
+    .firstRow__img
+      width: 800px
+      height: auto
+      margin: 20px
+      border: 1px solid #fff
+
+    .secondRow__img
+      width: 530px
+      height: auto
+      border: 1px solid #fff
+      margin: 20px
+
+  .fotografieReklamowe__thirdRow
+    justify-content: space-between
+    padding-right: 20px
+
+    .thirdRow__a
+      width: calc(69% - 50px)
+      height: auto
+
+      .thirdRow__img
+        width: 100%
+        height: auto
+        margin: 20px
+        border: 1px solid #fff
+
+    .thirdRow__b
+      width: calc(31% - 20px)
+      +flex(column, space-between, center)
+
+      .thirdRow__img
+        width: 100%
+        height: auto
+        margin: 20px
+        border: 1px solid #fff
+
+// Imprezy okolicznosciowe
+
+.imprezyOkolicznosciowe__main
+  width: 100%
+  max-width: 1700px
+  padding: 20px 140px
+  display: grid
+  grid-template-columns: 60% 20% 20%
+  grid-template-rows: repeat(4, 230px)
+  grid-column-gap: 20px
+  grid-row-gap: 20px
+  transform: translateX(-40px)
+  margin: 0 auto 50px auto
+
+  img
+    width: 100%
+    height: 100%
+
+  .video-1
+    grid-column: 1
+    grid-row: 1 / span 2
+
+  .video-2
+    grid-column: 1
+    grid-row: 3 / span 2
+
+  .img-1
+    grid-column: 2
+    grid-row: 1
+
+  .img-2
+    grid-column: 2
+    grid-row: 2
+
+  .img-3
+    grid-column: 3
+    grid-row: 1
+
+  .img-4
+    grid-column: 3
+    grid-row: 2
+
+  .img-5
+    grid-column: 2 / span 2
+    grid-row: 3 / span 2
+
+

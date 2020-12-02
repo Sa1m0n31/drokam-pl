@@ -56,22 +56,22 @@ const Oferta = () => {
           <h2 id="one" ref={one} className="ofertaItem__label">Filmy promocyjne</h2>
         </div>
         <div className="ofertaItem">
-          <Link className="ofertaItem__link" to="/filmy-promocyjne">
+          <Link className="ofertaItem__link" to="/fotografia-reklamowa">
             <Img className="ofertaItem__img" fluid={data.oferta2.childImageSharp.fluid} alt="drokam-oferta-2" />
           </Link>
           <h2 ref={two} className="ofertaItem__label">Fotografia reklamowa</h2>
         </div>
         <div className="ofertaItem">
-          <Link className="ofertaItem__link" to="/filmy-promocyjne">
+          <Link className="ofertaItem__link" to="/imprezy-okolicznosciowe">
             <Img className="ofertaItem__img" fluid={data.oferta1.childImageSharp.fluid} alt="drokam-oferta-3" />
           </Link>
-          <h2 ref={three} className="ofertaItem__label">Fotografia reklamowa</h2>
+          <h2 ref={three} className="ofertaItem__label">Imprezy okolicznościowe</h2>
         </div>
         <div className="ofertaItem">
-          <Link className="ofertaItem__link" to="/filmy-promocyjne">
+          <Link className="ofertaItem__link" to="/rolnictwo-precyzyjne">
             <Img className="ofertaItem__img" fluid={data.oferta2.childImageSharp.fluid} alt="drokam-oferta-4" />
           </Link>
-          <h2 ref={four} className="ofertaItem__label">Fotografia reklamowa</h2>
+          <h2 ref={four} className="ofertaItem__label">Rolnictwo precyzyjne</h2>
         </div>
       </div>
     <div className="ofertaMain__bottom">

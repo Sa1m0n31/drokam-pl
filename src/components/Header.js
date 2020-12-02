@@ -4,6 +4,7 @@ import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
 import PageMenu from "./PageMenu"
+import HamburgerMenu from "./HamburgerMenu"
 
 const Header = ({title}) => {
   const data = useStaticQuery(graphql`
@@ -19,6 +20,11 @@ const Header = ({title}) => {
   `);
 
   return (<header className="pageHeader">
+    <div className="hamburgerMenu__hamburger">
+      <span className="hamburger--line" />
+      <span className="hamburger--line" />
+      <span className="hamburger--line" />
+    </div>
       <Img className="headerBackground" fluid={data.header.childImageSharp.fluid} alt="drokam-background" />
       <div className="topLogo">
         <Link to="/">

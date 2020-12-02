@@ -23,9 +23,36 @@
       transform: translate(-50%, 100px)
 
 @media(max-width: 1000px)
+  .topMenuList
+    display: none !important
+
   .pageHeader__h::before
     top: -10px !important
     height: 6px !important
+
+  .pageHeader
+    .topLogo
+      width: 45px
+      height: 45px
+      img
+        width: 45px
+        height: 45px
+
+    .hamburgerMenu__hamburger
+      display: block
+      position: absolute
+      top: 30px
+      right: 20px
+      width: 40px
+      height: 40px
+      z-index: 10
+      +flex(column, space-evenly, center)
+
+      .hamburger--line
+        display: block
+        width: 100%
+        height: 1px
+        background: #fff
 
 @media(max-width: 900px)
   .centerLogo__img
@@ -40,9 +67,6 @@
       display: block
       width: 320px
       height: 49px
-
-  .topMenuList
-    display: none !important
 
   .hamburgerMenu
     display: block
@@ -79,6 +103,12 @@
 
   .landingPageImg--mobile
     display: block
+
+  .pageHeader
+    height: 200px
+
+    .pageHeader__h
+      bottom: 20px
 
 
 /* About us */
@@ -340,3 +370,48 @@
           label
             .usluga__item__btn
               margin-right: 5px
+
+// Fotografia reklamowa
+
+@media(max-width: 1000px)
+  .portfolioSubpageHeader::before
+    height: 5px
+
+  .portfolioSubpage__fotografieReklamowe > *
+    width: 75vw
+    padding: 0 !important
+    +flex(column, center, center)
+
+    .firstRow__img, .secondRow__img, .thirdRow__img, .thirdRow__a, .thirdRow__b
+      width: 100% !important
+      height: auto !important
+      margin-left: 0 !important
+      margin-right: 0 !important
+
+@media(max-width: 600px)
+  .portfolioSubpageHeader
+    margin-bottom: 30px
+
+  .portfolioSubpage__fotografieReklamowe
+    padding: 0 20px 20px 20px
+
+    *
+     width: 90vw
+
+// Imprezy okolicznosciowe
+
+@media(max-width: 1300px)
+  .imprezyOkolicznosciowe__main
+    transform: translateX(-20px)
+    padding: 20px 5vw
+
+@media(max-width: 1000px)
+  .imprezyOkolicznosciowe__main
+    width: 75vw
+    margin: 0 auto 30px auto
+    transform: translateX(0)
+    +flex(column, center, center)
+
+@media(max-width: 600px)
+  .imprezyOkolicznosciowe__main
+    width: 90vw

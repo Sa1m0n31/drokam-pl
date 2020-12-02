@@ -33,12 +33,16 @@ const Oferta = () => {
   `);
 
   const hoverHandle = (arg = 1) => {
-    switch(arg) {
-      case 1:
-        //gsap.fromTo(".ofertaItem__label::before", { opacity: 1 }, { opacity: 0, duration: 1 })
-        break;
-      default:
-        break;
+    if(typeof document !== 'undefined') {
+      let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
+      gsap.fromTo(el, { width: 0 }, { width: 50, duration: .6 });
+    }
+  }
+
+  const leaveHandle = (arg = 1) => {
+    if(typeof document !== 'undefined') {
+      let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
+      gsap.fromTo(el, { width: 50 }, { width: 0, duration: .6 });
     }
   }
 
@@ -50,28 +54,55 @@ const Oferta = () => {
   return (<main className="ofertaMain">
       <div className="ofertaMain__content">
         <div className="ofertaItem">
-          <Link onMouseOver={() => hoverHandle(1)} className="ofertaItem__link" to="/filmy-promocyjne">
+          <Link onMouseOver={() => hoverHandle(1)}
+                onMouseLeave={() => leaveHandle(1)}
+                className="ofertaItem__link"
+                to="/filmy-promocyjne">
             <Img className="ofertaItem__img" fluid={data.oferta1.childImageSharp.fluid} alt="drokam-oferta-1" />
           </Link>
-          <h2 id="one" ref={one} className="ofertaItem__label">Filmy promocyjne</h2>
+          <h2 id="one" ref={one} className="ofertaItem__label">
+            <span className="ofertaItem__label--before" />
+            Filmy promocyjne
+          </h2>
         </div>
         <div className="ofertaItem">
-          <Link className="ofertaItem__link" to="/fotografia-reklamowa">
+          <Link
+            onMouseOver={() => hoverHandle(2)}
+            onMouseLeave={() => leaveHandle(2)}
+            className="ofertaItem__link"
+            to="/fotografie-reklamowe">
             <Img className="ofertaItem__img" fluid={data.oferta2.childImageSharp.fluid} alt="drokam-oferta-2" />
           </Link>
-          <h2 ref={two} className="ofertaItem__label">Fotografia reklamowa</h2>
+          <h2 ref={two} className="ofertaItem__label">
+            <span className="ofertaItem__label--before" />
+            Fotografia reklamowa
+          </h2>
         </div>
         <div className="ofertaItem">
-          <Link className="ofertaItem__link" to="/imprezy-okolicznosciowe">
+          <Link
+            onMouseOver={() => hoverHandle(3)}
+            onMouseLeave={() => leaveHandle(3)}
+            className="ofertaItem__link"
+            to="/imprezy-okolicznosciowe">
             <Img className="ofertaItem__img" fluid={data.oferta1.childImageSharp.fluid} alt="drokam-oferta-3" />
           </Link>
-          <h2 ref={three} className="ofertaItem__label">Imprezy okolicznościowe</h2>
+          <h2 ref={three} className="ofertaItem__label">
+            <span className="ofertaItem__label--before" />
+            Imprezy okolicznościowe
+          </h2>
         </div>
         <div className="ofertaItem">
-          <Link className="ofertaItem__link" to="/rolnictwo-precyzyjne">
+          <Link
+            onMouseOver={() => hoverHandle(4)}
+            onMouseLeave={() => leaveHandle(4)}
+            className="ofertaItem__link"
+            to="/rolnictwo-precyzyjne">
             <Img className="ofertaItem__img" fluid={data.oferta2.childImageSharp.fluid} alt="drokam-oferta-4" />
           </Link>
-          <h2 ref={four} className="ofertaItem__label">Rolnictwo precyzyjne</h2>
+          <h2 ref={four} className="ofertaItem__label">
+            <span className="ofertaItem__label--before" />
+            Rolnictwo precyzyjne
+          </h2>
         </div>
       </div>
     <div className="ofertaMain__bottom">

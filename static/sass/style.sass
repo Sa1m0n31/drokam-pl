@@ -127,6 +127,15 @@ a
 .centerLogo__img--mobile, .landingPageImg--mobile
   display: none
 
+// Remove blue shadow when button clicked
+
+.btnd:active,
+.btnd:focus,
+.btnd:focus:active
+  background-image: none
+  outline: 0
+  box-shadow: none
+
 // Landing page
 
 .hamburgerMenu
@@ -446,6 +455,7 @@ a
 
   .headerBackground
     position: absolute
+    top: 0 !important
     width: 100%
     height: 100%
 
@@ -523,14 +533,13 @@ a
       text-align: center
       margin: 30px 0
 
-    .ofertaItem__label::before
-      content: ""
+    .ofertaItem__label--before
       position: absolute
       top: -10px
       left: 50%
       transform: translateX(-50%)
       height: 4px
-      width: 50px
+      width: 0
       background-color: $primary
       transform-origin: 50%
 
@@ -591,6 +600,7 @@ a
         width: 30%
         height: 85%
         cursor: pointer
+        transition: .2s
 
         .portfolioSection__content__img
           width: 100%
@@ -600,6 +610,24 @@ a
 
           *
             z-index: 1 !important
+
+        .portfolioSection__content__img:hover::after
+          opacity: 1
+
+      .portfolioSection__content__player::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        left: 0
+        opacity: 0
+        z-index: 3
+        background-color: #000
+        transition: .2s
+
+      .portfolioSection__content__player:hover::after
+        opacity: .3
 
     .portfolioSection__title
       font-size: calc(25px + 20 * ((100vw - 900px)/(1100)))
@@ -1030,7 +1058,33 @@ a
       width: 49%
       height: auto
 
+// Page mobile menu
 
+.pageMobileMenu
+  width: 100vw
+  height: 100vh
+  position: absolute
+  top: 0
+  left: 0
+  background-color: rgba(0, 0, 0, .9)
+  z-index: 12
+  +flex(row, center, center)
+
+  .exit
+    color: #fff
+    position: absolute
+    top: 20px
+    right: 40px
+    font-size: 50px
+    background: transparent
+    cursor: pointer
+
+  .pageMobileMenu__list
+    color: #fff
+
+    .pageMobileMenu__item
+      text-align: center
+      margin: 20px
 
 
 

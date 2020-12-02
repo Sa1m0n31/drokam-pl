@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
+import { gsap } from "gsap/all";
+
 import PageMenu from "./PageMenu"
 import HamburgerMenu from "./HamburgerMenu"
+import PageMobileMenu from "./PageMobileMenu"
 
 const Header = ({title}) => {
+  const [menu, setMenu] = useState(false);
+
   const data = useStaticQuery(graphql`
       query Header {
           header: file(relativePath: { eq: "drokam-header-background.png" }) {
@@ -19,8 +24,20 @@ const Header = ({title}) => {
       }
   `);
 
+  const openMenu = () => {
+    if(typeof document !== 'undefined') {
+      const el = document.querySelector(".pageMobileMenu");
+      gsap.set(el, { x: -3000 })
+      gsap.to(el,{ x: 0, duration: .5 });
+      setMenu(true);
+    }
+  }
+
   return (<header className="pageHeader">
-    <div className="hamburgerMenu__hamburger">
+    <>
+      {menu ? <PageMobileMenu /> : "" }
+    </>
+    <div className="btn hamburgerMenu__hamburger" onClick={() => openMenu()}>
       <span className="hamburger--line" />
       <span className="hamburger--line" />
       <span className="hamburger--line" />

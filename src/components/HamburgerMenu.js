@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "gatsby"
 
 import { gsap } from 'gsap/all';
@@ -12,6 +12,7 @@ const HamburgerMenu = () => {
   const item3 = useRef(null);
   const item4 = useRef(null);
   const item5 = useRef(null);
+  const hamburgerMenu = useRef(null);
 
   const listItems = [item1.current, item2.current, item3.current, item4.current, item5.current];
 
@@ -46,19 +47,23 @@ const HamburgerMenu = () => {
   const dropdownMenu = () => {
     if(!open) {
       setOpen(true);
-      gsap.fromTo(list.current, { height: 0 }, { height: 180, duration: 1 })
+      gsap.set(hamburgerMenu.current, { height: "auto" });
+      gsap.fromTo(list.current, { height: 0 }, { height: 180, duration: .5 })
         .then(() => {
-          gsap.set(listItems, { display: "block" });
+          gsap.set(listItems, { opacity: 1 });
         });
     }
     else {
       setOpen(false);
-      gsap.set(listItems, { display: "none" });
-      gsap.to(list.current, { height: 0, duration: 1 });
+      gsap.set(listItems, { opacity: 0 });
+      gsap.to(list.current, { height: 0, duration: .5 })
+        .then(() => {
+          gsap.set(hamburgerMenu.current, { height: "100%" });
+        });
     }
   }
 
-  return (<menu className="hamburgerMenu">
+  return (<menu ref={hamburgerMenu} className="hamburgerMenu">
     <div className="hamburgerMenu__top">
       <Link className="topLogo__link" to="/">
         <img className="topLogo__img" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-logo" />

@@ -115,10 +115,10 @@ const PortfolioPage = () => {
         <button className="portfolioSection__content__player" onClick={() => playYoutube("filmyPromocyjne1")} >
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("filmyPromocyjne2")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("filmyPromocyjne2")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("filmyPromocyjne3")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("filmyPromocyjne3")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>
@@ -130,16 +130,16 @@ const PortfolioPage = () => {
     <section className="portfolioSectionP">
       <img src={require("../../static/img/drokam-sygnet.png")} alt="drokam-portfolio" />
       <h2 className="portfolioSection__title">
-          Fotografie reklamowe
+          Fotografie<br/>reklamowe
       </h2>
       <div className="portfolioSection__content">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("fotografieReklamowe1")} >
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("fotografieReklamowe2")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("fotografieReklamowe2")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("fotografieReklamowe3")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("fotografieReklamowe3")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>
@@ -151,16 +151,16 @@ const PortfolioPage = () => {
     <section className="portfolioSectionP">
       <img src={require("../../static/img/drokam-sygnet.png")} alt="drokam-portfolio" />
       <h2 className="portfolioSection__title">
-        Imprezy okolicznościowe
+        Imprezy<br/>okolicznościowe
       </h2>
       <div className="portfolioSection__content">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("imprezyOkolicznosciowe1")} >
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("imprezyOkolicznosciowe2")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("imprezyOkolicznosciowe2")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("imprezyOkolicznosciowe3")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("imprezyOkolicznosciowe3")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>
@@ -172,16 +172,16 @@ const PortfolioPage = () => {
     <section className="portfolioSectionP filmyPromocyjne">
       <img src={require("../../static/img/drokam-sygnet.png")} alt="drokam-portfolio" />
       <h2 className="portfolioSection__title">
-        Rolnictwo precyzyjne
+        Rolnictwo<br/>precyzyjne
       </h2>
       <div className="portfolioSection__content">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("rolnictwoPrecyzyjne1")} >
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("rolnictwoPrecyzyjne2")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("rolnictwoPrecyzyjne2")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("rolnictwoPrecyzyjne3")}>
+        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("rolnictwoPrecyzyjne3")}>
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>

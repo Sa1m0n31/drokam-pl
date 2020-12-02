@@ -10,8 +10,25 @@ const FilmyPromocyjne = () => {
       Filmy promocyjne
     </h2>
     <div className="filmyPromocyjneTop">
-      <button className="filmyPromocyjne__player">
-        <img className="filmyPromocyjne__first" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__first">
+        <img className="filmyPromocyjne__img" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
+      </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__second">
+        <img className="filmyPromocyjne__img" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
+      </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__third">
+        <img className="filmyPromocyjne__img" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn playBig" src={require("../../static/img/play.png")} alt="play" />
+      </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__fourth">
+        <img className="filmyPromocyjne__img" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
+      </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__fifth">
+        <img className="filmyPromocyjne__img" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
     </div>
 
@@ -22,9 +39,18 @@ const FilmyPromocyjne = () => {
     />
 
     <div className="filmyPromocyjneBottom">
-      <img className="filmyPromocyjne__first" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
-      <img className="filmyPromocyjne__second" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
-      <img className="filmyPromocyjne__third" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__first">
+        <img className="filmyPromocyjne__first" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn playBig" src={require("../../static/img/play.png")} alt="play" />
+      </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__second">
+        <img className="filmyPromocyjne__first" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
+      </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__third">
+        <img className="filmyPromocyjne__first" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
+      </button>
     </div>
     </main>);
 }

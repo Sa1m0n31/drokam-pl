@@ -3,21 +3,15 @@ import React from "react"
 const youtubeLinks = {
   filmyPromocyjne1: {
     type: 1,
-    payload: (<iframe width="560" height="315" src="https://www.youtube.com/embed/BXDYP9Bt0AE" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen></iframe>)
+    payload: "t8lnCA8PHJM"
   },
   filmyPromocyjne2: {
     type: 1,
-    payload: (<iframe width="560" height="315" src="https://www.youtube.com/embed/BXDYP9Bt0AE" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen></iframe>)
+    payload: "BXDYP9Bt0AE"
   },
   filmyPromocyjne3: {
     type: 1,
-    payload: (<iframe width="560" height="315" src="https://www.youtube.com/embed/BXDYP9Bt0AE" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen></iframe>)
+    payload: "BXDYP9Bt0AE"
   },
   fotografieReklamowe1: {
     type: 2,

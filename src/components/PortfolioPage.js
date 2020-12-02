@@ -3,11 +3,9 @@ import React, { useState, useEffect } from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
-import { disableScroll, enableScroll } from "../helpers/enableScroll";
 import youtubeLinks from "../helpers/portfolioHelper"
 
 import Youtube from "./Youtube";
-import PageMobileMenu from "./PageMobileMenu"
 
 const PortfolioPage = () => {
   const [play, setPlay] = useState(false);
@@ -114,13 +112,17 @@ const PortfolioPage = () => {
       </h2>
       <div className="portfolioSection__content">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("filmyPromocyjne1")} >
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          {/*<Img className="portfolioSection__content__img" fluid={data.player.childImageSharp.fluid} alt="portfolio-1" />*/}
+          <img className="portfolioSection__content__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/hqdefault.jpg`} alt="filmy-promocyjne-youtube" />
+          <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("filmyPromocyjne2")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <img className="portfolioSection__content__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/hqdefault.jpg`} alt="filmy-promocyjne-youtube" />
+          <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("filmyPromocyjne3")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <img className="portfolioSection__content__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/hqdefault.jpg`} alt="filmy-promocyjne-youtube" />
+          <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
         </button>
       </div>
       <button className="btn btn--portfolio btn--zobaczWiecej">

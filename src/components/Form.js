@@ -43,6 +43,14 @@ export default class Form extends React.Component {
   }
 
   handleError(n) {
+    if((n === 1)||(n === 2)||(n === 3)) {
+      this.state.container.current.scrollIntoView({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+    }
+
     if(n === 1) {
       this.state.nameInput.current.style.border = "2px solid red";
       this.state.nameInput.current.style.animation = "shake .5s";

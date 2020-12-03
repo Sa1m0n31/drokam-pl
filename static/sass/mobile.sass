@@ -126,9 +126,7 @@
 @media(max-width: 500px)
   .landingPage, .landingPageImg
     min-height: 500px !important
-
-  .centerLogo
-    top: 60% !important
+    height: 100vh !important
 
   .landingPageImg
     display: none
@@ -203,24 +201,17 @@
         width: 300px
         height: calc(300px / 1.78)
 
-        *
-         // z-index: 10
-
-      /*.right__img::after
-        display: block
-        content: ""
-        position: absolute
-        top: -50px
-        left: -50px
-        background: red
-        width: 200px
-        height: 200px
-        z-index: 8 */
-
     .infoBox__right::after
       width: 75%
       height: 110%
       left: -10px
+
+@media(max-width: 500px)
+  .infoBox
+    .infoBox__left
+      .left__header
+        font-size: 20px
+
 
 /* Portfolio */
 

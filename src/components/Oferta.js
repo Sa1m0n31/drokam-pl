@@ -33,16 +33,20 @@ const Oferta = () => {
   `);
 
   const hoverHandle = (arg = 1) => {
-    if(typeof document !== 'undefined') {
-      let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
-      gsap.fromTo(el, { width: 0 }, { width: 50, duration: .6 });
+    if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
+      if(window.innerWidth >  700) {
+        let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
+        gsap.fromTo(el, { width: 0 }, { width: 50, duration: .6 });
+      }
     }
   }
 
   const leaveHandle = (arg = 1) => {
-    if(typeof document !== 'undefined') {
-      let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
-      gsap.fromTo(el, { width: 50 }, { width: 0, duration: .6 });
+    if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
+     if(window.innerWidth > 700) {
+       let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
+       gsap.fromTo(el, { width: 50 }, { width: 0, duration: .6 });
+     }
     }
   }
 

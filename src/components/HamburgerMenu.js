@@ -50,16 +50,18 @@ const HamburgerMenu = () => {
       gsap.set(hamburgerMenu.current, { height: "auto" });
       gsap.fromTo(list.current, { height: 0 }, { height: 180, duration: .5 })
         .then(() => {
-          gsap.set(listItems, { opacity: 1 });
-        });
+         gsap.set(listItems, { visibility: 'visible' });
+        })
+        .catch((e) => { console.log(e) });
     }
     else {
       setOpen(false);
-      gsap.set(listItems, { opacity: 0 });
+      gsap.set(listItems, { visibility: 'hidden' });
       gsap.to(list.current, { height: 0, duration: .5 })
         .then(() => {
           gsap.set(hamburgerMenu.current, { height: "100%" });
-        });
+        })
+        .catch((e) => console.log(e));
     }
   }
 

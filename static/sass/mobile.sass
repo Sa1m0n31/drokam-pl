@@ -108,15 +108,17 @@
           background: #fff
 
     .hamburgerMenu__list
+      position: relative
       width: 100%
       height: 0
 
       .hamburgerMenuList__item
+        white-space: nowrap
         position: relative
         margin: 8px 0
         text-align: center
         cursor: pointer
-        opacity: 0
+        visibility: hidden
 
       .hamburgerMenuList__item:last-child
         margin-bottom: 2px
@@ -337,6 +339,9 @@
         .ofertaItem__link
           height: calc(80vw * 0.44 / 1.2)
 
+          .ofertaItem__img:hover
+            transform: scale(1.03) !important
+
     .ofertaMain__bottom
       .ofertaMain__slogan
         padding: 0 20px
@@ -393,15 +398,29 @@
           padding-left: 0 !important
           font-size: 12px
 
+    .recaptcha
+      width: 100% !important
+      text-align: center
+
 @media(max-width: 500px)
   .formSection
-    width: 350px
+    width: 280px
 
     .formSection__main
-      width: 350px
+      width: 100%
+
+      input, textarea
+        padding: 5px 13px
+
+      input::placeholder
+        font-size: 14px
 
       textarea
         height: 250px
+        padding: 8px 18px
+
+      .btn--form
+        width: 100%
 
       .form__usluga
         .form__usluga__item
@@ -599,6 +618,15 @@
     iframe
       width: 85vw
       height: 85vw
+
+    .youtubeImg
+      width: 80vw
+      height: auto
+
+    .youtube__exit
+      img
+        width: 30px
+        height: 30px
 
 // After form
 

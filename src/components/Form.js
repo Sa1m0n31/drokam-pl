@@ -29,6 +29,9 @@ export default class Form extends React.Component {
 
   componentDidMount() {
     loadReCaptcha("6LdR3_YZAAAAAGOo3v4ImKqI1v41niaBfgQkqja4");
+    if(typeof document !== 'undefined') {
+
+    }
   }
 
   verifyCallback(res) {
@@ -199,6 +202,12 @@ export default class Form extends React.Component {
                 Rolnictwo precyzyjne
               </label>
             </div>
+          </div>
+
+          <div className="recaptcha">
+            This site is protected by reCAPTCHA and the Google
+            <a href="https://policies.google.com/privacy"> Privacy Policy</a> and
+            <a href="https://policies.google.com/terms"> Terms of Service</a> apply.
           </div>
 
           <ReCaptcha

@@ -10,6 +10,7 @@ export default class Form extends React.Component {
     super(props);
     this.state = {
       nameInput: React.createRef(),
+      contactInput: React.createRef(),
       formRef: React.createRef(),
       afterSubmitRef: React.createRef(),
       name: "",
@@ -19,27 +20,52 @@ export default class Form extends React.Component {
       filmyPromocyjne: false,
       imprezyOkolicznosciowe: false,
       rolnictwoPrecyzyjne: false,
-      ok: false
+      error: 5
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleButton = this.handleButton.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.verifyCallback = this.verifyCallback.bind(this);
+    this.handleError = this.handleError.bind(this);
   }
 
   componentDidMount() {
     loadReCaptcha("6LdR3_YZAAAAAGOo3v4ImKqI1v41niaBfgQkqja4");
-    if(typeof document !== 'undefined') {
-
-    }
   }
 
   verifyCallback(res) {
     if(res) {
       this.setState({
-        ok: true
+        error: 0
       });
     }
+  }
+
+  handleError(n) {
+    if(n === 1) {
+      this.state.nameInput.current.style.border = "2px solid red";
+      this.state.nameInput.current.style.animation = "shake .5s";
+      this.state.contactInput.current.style.border = "none";
+    }
+    else if(n === 2) {
+      this.state.contactInput.current.style.border = "2px solid red";
+      this.state.contactInput.current.style.animation = "shake .5s";
+      this.state.nameInput.current.style.border = "none";
+    }
+    else if(n === 3) {
+      this.state.nameInput.current.style.border = "2px solid red";
+      this.state.nameInput.current.style.animation = "shake .5s";
+      this.state.contactInput.current.style.border = "2px solid red";
+      this.state.contactInput.current.style.animation = "shake .5s";
+    }
+    else {
+      this.state.nameInput.current.style.border = "none";
+      this.state.contactInput.current.style.border = "none";
+    }
+    setTimeout(() => {
+      this.state.nameInput.current.style.animation = "none";
+      this.state.contactInput.current.style.animation = "none";
+    }, 500);
   }
 
   handleButton(e) {
@@ -98,38 +124,81 @@ export default class Form extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  async handleSubmit(e) {
     e.preventDefault();
 
-    const form = e.target;
-    const xhr = new XMLHttpRequest();
-    const data = {
-      nazwa: this.state.name,
-      kontakt: this.state.contact,
-      wiadomosc: this.state.msg,
-      filmyPromocyjne: this.state.filmyPromocyjne,
-      fotografiaReklamowa: this.state.fotografiaReklamowa,
-      imprezyOkolicznosciowe: this.state.imprezyOkolicznosciowe,
-      rolnictwoPrecyzyjne: this.state.rolnictwoPrecyzyjne
-    };
-
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader("Accept", "application/json");
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        if((typeof document !== 'undefined')&&(this.state.ok)) {
-          const el = document.querySelector(".afterForm");
-          gsap.fromTo(this.state.formRef.current, { x: 0 }, { x: -3000, duration: .7 })
-            .then(() => {
-              gsap.to(el, { opacity: 1, duration: .5 });
-            });
-        }
-      } else {
-        console.log("error");
+    /* Validation */
+    // Name
+    if(this.state.name === '') {
+      await this.setState({
+        error: 1
+      });
+    }
+    else {
+      if(this.state.error === 3) {
+        await this.setState({
+          error: 2
+        });
       }
-    };
-    xhr.send(JSON.stringify(data));
+    }
+
+    // Contact
+    if(this.state.contact === '') {
+      if(this.state.error === 1) {
+        await this.setState({
+          error: 3
+        });
+      }
+      else if(this.state.error === 2) {
+        await this.setState({
+          error: 2
+        });
+      }
+    }
+    else {
+      if(this.state.error === 2) {
+        await this.setState({
+          error: 0
+        });
+      }
+      else if(this.state.error === 3) {
+        await this.setState({
+          error: 1
+        });
+      }
+    }
+    await this.handleError(this.state.error);
+
+    if(this.state.error === 0) {
+      const xhr = new XMLHttpRequest();
+      const data = {
+        nazwa: this.state.name,
+        kontakt: this.state.contact,
+        wiadomosc: this.state.msg,
+        filmyPromocyjne: this.state.filmyPromocyjne,
+        fotografiaReklamowa: this.state.fotografiaReklamowa,
+        imprezyOkolicznosciowe: this.state.imprezyOkolicznosciowe,
+        rolnictwoPrecyzyjne: this.state.rolnictwoPrecyzyjne
+      };
+
+      xhr.open("POST", "https://formspree.io/f/mgeplqle");
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          if((typeof document !== 'undefined')&&(this.state.error === 0)) {
+            const el = document.querySelector(".afterForm");
+            gsap.fromTo(this.state.formRef.current, { x: 0 }, { x: -3000, duration: .7 })
+              .then(() => {
+                gsap.to(el, { opacity: 1, duration: .5 });
+              });
+          }
+        } else {
+          console.log("error");
+        }
+      };
+      xhr.send(JSON.stringify(data));
+    }
   }
 
   render() {
@@ -140,19 +209,18 @@ export default class Form extends React.Component {
         <header className="formSection__header">
           <h2>Wpisz wymagane dane i wyślij formularz:</h2>
           <h3><span className="red">*</span> - pole wymagane</h3>
-          <h3><span className="red">**</span> - wybierz jedno</h3>
         </header>
         <form className="formSection__main"
               action="https://formspree.io/f/mgeplqle"
               method="POST"
-              onSubmit={(this.handleSubmit)}
+              onSubmit={this.handleSubmit}
         >
           <input ref={this.state.nameInput} className="form__name" type="text" name="name"
                  placeholder="Imie i nazwisko / Nazwa firmy *"
                  value={this.state.name}
                  onChange={(e) => this.handleChange(e)} />
-          <input className="form__contact" type="text" name="contact"
-                 placeholder="Numer telefonu / Adres email **"
+          <input ref={this.state.contactInput} className="form__contact" type="text" name="contact"
+                 placeholder="Numer telefonu / Adres email *"
                  value={this.state.contact}
                  onChange={(e) => this.handleChange(e)} />
           <textarea className="form__msg" name="msg"

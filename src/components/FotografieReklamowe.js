@@ -46,9 +46,6 @@ const FotografieReklamowe = () => {
   `);
 
   return <main className="portfolioSubpage">
-    <h2 className="portfolioSubpageHeader">
-      Fotografie reklamowe
-    </h2>
     <main className="portfolioSubpage__fotografieReklamowe">
         <div className="fotografieReklamowe__firstRow">
             <Img className="firstRow__img" fluid={data.img1.childImageSharp.fluid} alt="drokam-fotografie-reklamowe-1" />

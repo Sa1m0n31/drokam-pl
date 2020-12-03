@@ -6,9 +6,6 @@ import youtubeLinks from "../helpers/portfolioHelper";
 
 const FilmyPromocyjne = () => {
   return (<main className="portfolioSubpage">
-    <h2 className="portfolioSubpageHeader">
-      Filmy promocyjne
-    </h2>
     <div className="filmyPromocyjneTop">
       <button className="filmyPromocyjne__player filmyPromocyjne__first">
         <img className="filmyPromocyjne__img" src={require("./../../static/img/player.png")} alt="drokam-filmy-promocyjne" />

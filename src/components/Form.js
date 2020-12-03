@@ -40,6 +40,11 @@ export default class Form extends React.Component {
         error: 0
       });
     }
+    else {
+      this.setState({
+        error: 4
+      });
+    }
   }
 
   handleError(n) {
@@ -200,7 +205,7 @@ export default class Form extends React.Component {
             gsap.fromTo(this.state.formRef.current, { x: 0 }, { x: -3000, duration: .7 })
               .then(() => {
                 gsap.to(el, { opacity: 1, duration: .5 });
-                gsap.set(this.state.container.current, { height: "500px" });
+                gsap.set(this.state.container.current, { height: "700px" });
                 gsap.set(this.state.formRef.current, { display: "none" });
                 this.state.container.current.scrollIntoView({
                   top: 0,

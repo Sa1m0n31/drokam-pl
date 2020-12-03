@@ -70,17 +70,6 @@ const LandingPage = () => {
     }
   }
 
-  /* useEffect(() => {
-    if((typeof window !== 'undefined')&&(typeof document !== 'undefined')) {
-      const frontContainer = document.querySelector(".frontContainer");
-      window.addEventListener("scroll", () => {
-          disableScrolling();
-          gsap.fromTo(frontContainer, { y: 0 }, { y: -window.innerHeight + window.pageYOffset, duration: 1 })
-            .then(() => enableScrolling());
-      });
-    }
-  }, []); */
-
   return (<div className="landingPage" ref={landingPage} onMouseMove={e => handleMouseMove(e)}>
       <Img className="landingPageImg" fluid={data.landing.childImageSharp.fluid} alt="drokam" />
       <Img className="landingPageImg landingPageImg--mobile" fluid={data.landingMobile.childImageSharp.fluid} alt="drokam" />

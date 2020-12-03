@@ -1,4 +1,6 @@
-import React from "react"
+import React from "react";
+
+import { Link } from 'gatsby';
 
 const Footer = () => {
   return (<footer className="footer">
@@ -21,7 +23,7 @@ const Footer = () => {
             </div>
             <div className="daneKontaktowe__content__item">
               <img className="kontaktImg" src={require("../../static/img/mail.png")} alt="drokam-kontakt-mail" />
-              <h4 className="kontaktItem">drokam@gmail.com</h4>
+              <h4 className="kontaktItem">drokam.studio@gmail.com</h4>
             </div>
           </main>
         </section>
@@ -40,11 +42,26 @@ const Footer = () => {
         </div>
         <div className="right__offer">
             <ul className="right__offer__list">
-              <li className="right__offer__list__item">Filmy promocyjne</li>
-              <li className="right__offer__list__item">Filmy reklamowe</li>
-              <li className="right__offer__list__item">Imprezy okolicznościowe</li>
-              <li className="right__offer__list__item">Rolnictwo precyzyjne</li>
-              <li className="right__offer__list__item">Imprezy okolicznościowe</li>
+              <li className="right__offer__list__item">
+                <Link to="/filmy-promocyjne">
+                  Filmy promocyjne
+                </Link>
+              </li>
+              <li className="right__offer__list__item">
+                <Link to="/fotografie-reklamowe">
+                  Fotografie reklamowe
+                </Link>
+              </li>
+              <li className="right__offer__list__item">
+                <Link to="/imprezy-okolicznosciowe">
+                  Imprezy okolicznościowe
+                </Link>
+              </li>
+              <li className="right__offer__list__item">
+                <Link to="/rolnictwo-precyzyjne">
+                  Rolnictwo precyzyjne
+                </Link>
+              </li>
             </ul>
         </div>
     </div>

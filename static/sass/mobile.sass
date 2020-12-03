@@ -349,7 +349,7 @@
         font-size: calc(19px + 10 * ((100vw - 300px)/(1000)))
 
       .daneKontaktowe__content .daneKontaktowe__content__item
-        grid-template-columns: 50px 200px
+        grid-template-columns: 50px 230px
 
 @media(max-width: 900px)
   .footer
@@ -383,6 +383,13 @@
           .right__offer__list__item
             text-align: center
             font-size: 14px
+            margin: 15px 0
+
+            a
+              justify-content: center
+
+    .footer__bottom
+      width: 80vw
 
 /* Oferta */
 
@@ -590,6 +597,11 @@
 
 // Portfolio page
 
+@media(min-width: 2000px)
+  .portfolioPage
+    .portfolioSection__title
+      width: 30% !important
+
 @media(max-width: 1600px)
   .portfolioPage
     .portfolioSectionP
@@ -668,6 +680,12 @@
     width: 80vw
 
 // Youtube
+
+@media(min-width: 1600px)
+  .youtube
+    iframe
+      width: 1200px
+      height: 700px
 
 @media(max-width: 1200px)
   .youtube

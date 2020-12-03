@@ -36,7 +36,7 @@ const Oferta = () => {
     if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
       if(window.innerWidth >  700) {
         let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
-        gsap.fromTo(el, { width: 0 }, { width: 50, duration: .6 });
+        gsap.fromTo(el, { width: 0 }, { width: 50, duration: .5 });
       }
     }
   }
@@ -45,7 +45,7 @@ const Oferta = () => {
     if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
      if(window.innerWidth > 700) {
        let el = document.querySelector(`.ofertaItem:nth-child(${arg}) .ofertaItem__label--before:first-child`);
-       gsap.fromTo(el, { width: 50 }, { width: 0, duration: .6 });
+       gsap.fromTo(el, { width: 50 }, { width: 0, duration: .5 });
      }
     }
   }

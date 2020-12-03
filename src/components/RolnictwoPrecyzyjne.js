@@ -38,9 +38,6 @@ const RolnictwoPrecyzyjne = () => {
   `);
 
   return <main className="portfolioSubpage">
-    <h2 className="portfolioSubpageHeader">
-      Rolnictwo precyzyjne
-    </h2>
     <main className="rolnictwoPrecyzyjne">
       <div className="firstRow">
           <Img className="firstRow__img" fluid={data.row11.childImageSharp.fluid} alt="drokam-rolnictwo-precyzyjne" />

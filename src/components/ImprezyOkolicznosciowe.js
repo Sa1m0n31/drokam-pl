@@ -2,9 +2,6 @@ import React from "react";
 
 const ImprezyOkolicznosciowe = () => {
   return <main className="portfolioSubpage">
-    <h2 className="portfolioSubpageHeader">
-      Imprezy okolicznościowe
-    </h2>
     <main className="imprezyOkolicznosciowe__main">
       <img className="video-1" src={require("../../static/img/player.png")} alt="player" />
       <img className="video-2" src={require("../../static/img/player.png")} alt="player" />

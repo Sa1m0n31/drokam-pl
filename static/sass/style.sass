@@ -252,9 +252,7 @@ a
     left: 50%
     transform: translate(-50%, -50%)
     width: calc(100vw * 0.5)
-    max-width: 800px
     height: calc(100vw * 0.4 / 6.5)
-    max-height: 123px
 
     .centerLogo__img
       width: 100%
@@ -277,9 +275,11 @@ a
 
 .infoBox
   width: 100%
+  max-width: 1700px
   height: 444px
   display: flex
   padding: 50px 140px 20px 140px
+  margin: 0 auto
 
   .infoBox__sygnet
     width: 45px
@@ -307,9 +307,9 @@ a
     .right__img
       position: relative
       width: calc(100vw * 0.35)
+      max-width: 600px
       height: calc((100vw * 0.35) / 1.78)
-      max-width: 701px
-      max-height: 393px
+      max-height: calc(600px / 1.78)
       z-index: 2
 
       img
@@ -322,8 +322,8 @@ a
     display: block
     width: calc(100vw * 0.35)
     height: calc((100vw * 0.37) / 1.78 + 20px)
-    max-width: 610px
-    max-height: 440px
+    max-width: 600px
+    max-height: calc(600px / 1.78 + 40px)
     background-color: #2E2E2E
 
 // Portfolio
@@ -405,10 +405,11 @@ a
   background-color: $dark
   color: #fff
   flex-wrap: wrap
-  +flex(row, space-beweeen, center)
+  +flex(row, space-between, center)
 
   .footer__right, .footer__left
     width: 50%
+    max-width: 850px
     height: 80%
 
   .footer__left

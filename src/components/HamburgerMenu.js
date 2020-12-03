@@ -14,8 +14,6 @@ const HamburgerMenu = () => {
   const item5 = useRef(null);
   const hamburgerMenu = useRef(null);
 
-  //const listItems = [item1.current, item2.current, item3.current, item4.current, item5.current];
-
   const oNasScroll = () => {
     if (typeof document !== 'undefined') {
       const oNasSection = document.querySelector("#onas");
@@ -26,7 +24,7 @@ const HamburgerMenu = () => {
       });
     }
     gsap.set(list.current, { height: 0 });
-    gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { display: "none" });
+    gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden' });
     setOpen(false);
   }
 
@@ -39,7 +37,7 @@ const HamburgerMenu = () => {
           left: 0
         });
         gsap.set(list.current, { height: 0 });
-        gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { display: "none" });
+        gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden' });
         setOpen(false);
       }
   }

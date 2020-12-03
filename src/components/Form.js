@@ -9,6 +9,7 @@ export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      container: React.createRef(),
       nameInput: React.createRef(),
       contactInput: React.createRef(),
       formRef: React.createRef(),
@@ -191,6 +192,12 @@ export default class Form extends React.Component {
             gsap.fromTo(this.state.formRef.current, { x: 0 }, { x: -3000, duration: .7 })
               .then(() => {
                 gsap.to(el, { opacity: 1, duration: .5 });
+                gsap.set(this.state.container.current, { height: "500px" });
+                gsap.set(this.state.formRef.current, { display: "none" });
+                this.state.container.current.scrollIntoView({
+                  top: 0,
+                  left: 0
+                });
               });
           }
         } else {
@@ -202,7 +209,7 @@ export default class Form extends React.Component {
   }
 
   render() {
-    return (<div className="formContainer">
+    return (<div className="formContainer" ref={this.state.container}>
       <AfterForm />
 
         <section className="formSection" id="kontakt" ref={this.state.formRef}>

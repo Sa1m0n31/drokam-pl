@@ -5,19 +5,10 @@ import Portfolio from "../components/Portfolio";
 import Partners from "../components/Partners";
 import Form from "./Form";
 
-import { gsap } from 'gsap/all';
-
 const FrontContainer = () => {
   const frontContainer = useRef(null);
 
-  const handleScroll = () => {
-    if((typeof window !== 'undefined')&&(typeof document !== 'undefined')) {
-      const footer = document.querySelector(".footer");
-      const landing = document.querySelector(".landingPage");
-    }
-  };
-
-  return (<main className="frontContainer" ref={frontContainer} onWheel={handleScroll}>
+  return (<main className="frontContainer" ref={frontContainer}>
     <InfoBox
       title="Jesteśmy młodymi kreatywnymi ludźmi, dla których film i fotografia to sposób na życie!"
       p1="Od 5 lat wprowadzamy do naszego portfolio coraz to nowsze projekty oraz współprace z firmami."

@@ -28,7 +28,7 @@ const Partners = () => {
         </h2>
       </header>
       <main className="partners__content">
-        <img className="partnersBackground" src={require("../../static/img/drokam-partners.png")} alt="drokam-partnerzy-tlo" />
+        {/*<img className="partnersBackground" src={require("../../static/img/drokam-partners.png")} alt="drokam-partnerzy-tlo" />*/}
         <div className="partners__content__arrow d-none">
           <img onClick={() => scroll(true)} src={require("../../static/img/prev.png")} alt="previous" />
         </div>

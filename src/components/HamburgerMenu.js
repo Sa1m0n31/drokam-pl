@@ -14,7 +14,7 @@ const HamburgerMenu = () => {
   const item5 = useRef(null);
   const hamburgerMenu = useRef(null);
 
-  const listItems = [item1.current, item2.current, item3.current, item4.current, item5.current];
+  //const listItems = [item1.current, item2.current, item3.current, item4.current, item5.current];
 
   const oNasScroll = () => {
     if (typeof document !== 'undefined') {
@@ -26,7 +26,7 @@ const HamburgerMenu = () => {
       });
     }
     gsap.set(list.current, { height: 0 });
-    gsap.set(listItems, { display: "none" });
+    gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { display: "none" });
     setOpen(false);
   }
 
@@ -39,7 +39,7 @@ const HamburgerMenu = () => {
           left: 0
         });
         gsap.set(list.current, { height: 0 });
-        gsap.set(listItems, { display: "none" });
+        gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { display: "none" });
         setOpen(false);
       }
   }
@@ -50,13 +50,13 @@ const HamburgerMenu = () => {
       gsap.set(hamburgerMenu.current, { height: "auto" });
       gsap.fromTo(list.current, { height: 0 }, { height: 180, duration: .5 })
         .then(() => {
-         gsap.set(listItems, { visibility: 'visible' });
+         gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'visible' });
         })
         .catch((e) => { console.log(e) });
     }
     else {
       setOpen(false);
-      gsap.set(listItems, { visibility: 'hidden' });
+      gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden' });
       gsap.to(list.current, { height: 0, duration: .5 })
         .then(() => {
           gsap.set(hamburgerMenu.current, { height: "100%" });

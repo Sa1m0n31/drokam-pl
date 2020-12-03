@@ -24,12 +24,14 @@ const FrontContainer = () => {
       p2="Podczas tworzenia każdego projektu sugerujemy się indywidualnymi potrzebami klienta oraz dostarczeniem materiałów najwyższej jakości."
       p3="Wszystkie fotografie oraz filmy umieszczone na stronie to tylko i wyłącznie nasze dzieła."
       button={false}
+      img={1}
     />
     <Portfolio />
     <InfoBox
       title="Szeroki wachlarz możliwości"
       p1="Naszym obiektywem obejmujemy dosłownie wszystko, co tylko sobie wymarzysz..."
       button={true}
+      img={2}
     />
     <Partners />
     <InfoBox
@@ -37,6 +39,7 @@ const FrontContainer = () => {
       p1="Wypełnij poniższy formularz i wyślij do nas swoje zapytanie dotyczące oferowanych przez nas usług."
       p2="Odezwiemy się do Ciebie najszybciej jak to możliwe i ustalimy szczegóły dotyczące ewentualnej współpracy."
       button={false}
+      img={3}
     />
     <Form />
   </main>);

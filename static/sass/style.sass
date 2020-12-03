@@ -161,7 +161,7 @@ a
   margin-top: 50px
 
 .p--infobox
-  font-size: calc(18px + 18 * ((100vw - 900px)/(1100)))
+  font-size: calc(18px + 12 * ((100vw - 900px)/(1100)))
 
 .header--infobox
   font-size: calc(18px + 25 * ((100vw - 900px)/(1100)))
@@ -203,7 +203,8 @@ a
   display: none
 
 .landingPage
-  height: fit-content
+  height: 100vh
+  //height: fit-content
   min-height: 800px
   position: relative
 
@@ -311,6 +312,9 @@ a
       max-height: 393px
       z-index: 2
 
+      img
+        transform: scale(1.03)
+
   .infoBox__right::after
     content: ""
     position: absolute
@@ -333,7 +337,8 @@ a
     height: calc((100vw * 0.24) / 1.5 + 100px)
     max-height: 400px
     padding: 0 140px
-    background: url("../img/drokam-portfolio-background.png")
+    background: url("../img/drokam-portfolio-background.png") no-repeat
+    background-size: cover
     +flex(row, space-between, center)
 
     .portfolio__content__item
@@ -361,6 +366,7 @@ a
     max-width: 1300px
     height: 350px
     margin: 0 auto
+    background: url("../img/drokam-partners.png") no-repeat
     +flex(row, center, center)
 
     .partnersBackground
@@ -823,6 +829,7 @@ a
     h3
       font-size: 16px
       font-weight: 300
+      margin-bottom: 16px
 
   .formSection__main
     width: calc(100vw - 280px)

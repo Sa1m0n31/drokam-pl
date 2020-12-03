@@ -92,9 +92,6 @@ const LandingPage = () => {
         <Img className="centerLogo__img" fluid={data.centerLogo.childImageSharp.fluid} alt="drokam-logo" />
         <img className="centerLogo__img--mobile" src={require("../../static/img/drokam-logo-mobile.png")} alt="drokam-logo" />
       </div>
-    {/*<button className="btn btn--callToAction">
-        Poznaj nas!
-      </button>*/}
   </div>);
 };
 

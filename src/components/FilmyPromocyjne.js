@@ -7,7 +7,7 @@ import Youtube from "./Youtube"
 
 const FilmyPromocyjne = () => {
   const [play, setPlay] = useState(false);
-  let video;
+  const [video, setVideo] = useState(null);
 
   useEffect(() => {
     setPlay(true);
@@ -21,30 +21,28 @@ const FilmyPromocyjne = () => {
     setPlay(false);
     switch(n) {
       case 1:
-        video = youtubeLinks.filmyPromocyjne1;
+        setVideo(youtubeLinks.filmyPromocyjne1);
         break;
       case 2:
-        video = youtubeLinks.filmyPromocyjne2;
+        setVideo(youtubeLinks.filmyPromocyjne2);
         break;
       case 3:
-        video = youtubeLinks.filmyPromocyjne3;
+        setVideo(youtubeLinks.filmyPromocyjne3);
         break;
       case 4:
-        video = youtubeLinks.filmyPromocyjne4;
+        setVideo(youtubeLinks.filmyPromocyjne4);
         break;
       case 5:
-        video = youtubeLinks.filmyPromocyjne5;
+        setVideo(youtubeLinks.filmyPromocyjne5);
         break;
       case 6:
-        video = youtubeLinks.filmyPromocyjne6;
+        setVideo(youtubeLinks.filmyPromocyjne6);
         break;
       case 7:
-        video = youtubeLinks.filmyPromocyjne7;
-        break;
-      case 8:
-        video = youtubeLinks.filmyPromocyjne8;
+        setVideo(youtubeLinks.filmyPromocyjne7);
         break;
       default:
+        setVideo(youtubeLinks.filmyPromocyjne8);
         break;
     }
     console.log(play);
@@ -53,27 +51,27 @@ const FilmyPromocyjne = () => {
 
   return (<main className="portfolioSubpage">
     <div className="yt">
-      {play ? <Youtube medium={youtubeLinks.filmyPromocyjne1} /> : ""}
+      {play ? <Youtube medium={video} /> : ""}
     </div>
     <div className="filmyPromocyjneTop">
       <button className="filmyPromocyjne__player filmyPromocyjne__first" onClick={() => handlePlay(1)}>
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__second"  onClick={() => handlePlay(2)} >
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__third"  onClick={() => handlePlay(3)} >
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn playBig" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__fourth"  onClick={() => handlePlay(4)}>
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne4.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne4.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__fifth"  onClick={() => handlePlay(5)}>
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne5.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne5.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
     </div>
@@ -86,15 +84,15 @@ const FilmyPromocyjne = () => {
 
     <div className="filmyPromocyjneBottom">
       <button className="filmyPromocyjne__player filmyPromocyjne__first"  onClick={() => handlePlay(6)}>
-        <img className="filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne6.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne6.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn playBig" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__second"  onClick={() => handlePlay(7)}>
-        <img className="filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne7.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne7.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__third"  onClick={() => handlePlay(8)}>
-        <img className="filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne8.payload}/hqdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne8.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
     </div>

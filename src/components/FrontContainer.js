@@ -22,7 +22,7 @@ const FrontContainer = () => {
       window.addEventListener("scroll", () => {
         console.log(window.pageYOffset);
         if(window.pageYOffset > 200) {
-          if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = ".8";
+          if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = "1";
         }
         else {
           if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = "0";

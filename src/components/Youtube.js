@@ -1,24 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { enableScroll } from "../helpers/enableScroll";
+import React, { useEffect, useState, useRef } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
 
 import YouTube from 'react-youtube';
 
 const Youtube = ({medium}) => {
   const [playState, setPlayState] = useState(true);
-  let data = useStaticQuery(graphql`
-      query Youtube {
-          img: file(relativePath: { eq: "drokam-11.jpg" }) {
-              childImageSharp {
-                  fluid(maxWidth: 1300, maxHeight: 1200) {
-                      ...GatsbyImageSharpFluid
-                  }
-              }
-          }
-      }
-  `);
+  const yt = useRef(null);
 
   const exit = () => {
     setPlayState(false);
@@ -33,7 +21,7 @@ const Youtube = ({medium}) => {
     event.target.playVideo();
   }
 
-  return <div className={playState ? "youtube" : "d-none"}>
+  return <div onClick={exit} className={playState ? "youtube" : "d-none"}>
     <button className="youtube__exit" onClick={exit}>
       <img src={require("../../static/img/exit.png")} alt="exit" />
     </button>
@@ -46,7 +34,7 @@ const Youtube = ({medium}) => {
         containerClassName="videoContainer"
         onReady={e => playYoutube(e)}
       />
-    ) : <Img className="youtubeImg" fluid={data.img.childImageSharp.fluid} alt="drokam-portfolio" />}
+    ) : <img className="youtubeImg" src={require(`../../static/img/${medium.payload}`)} alt="portoflio-img" />}
   </div>
 };
 

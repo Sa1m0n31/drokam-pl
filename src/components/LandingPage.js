@@ -10,8 +10,13 @@ import HamburgerMenu from "./HamburgerMenu"
 
 const LandingPage = () => {
   const landingPage = useRef(null);
+  const centerLogo = useRef(null);
 
   const [scrollToFrontContainer, setScrollToFrontContainer] = useState(true);
+
+  useEffect(() => {
+    gsap.fromTo(centerLogo.current, { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
+  }, []);
 
   const data = useStaticQuery(graphql`
       query Slider {
@@ -39,28 +44,6 @@ const LandingPage = () => {
       }
   `);
 
-  function disableScrolling(){
-    const x=window.scrollX;
-    const y=window.scrollY;
-    window.onscroll=function(){window.scrollTo(x, y);};
-  }
-
-  function enableScrolling(){
-    window.onscroll=function(){};
-  }
-
-  const handleScroll = (e) => {
-    /* if(((typeof window !== 'undefined')&&(typeof document !== 'undefined'))&&(scrollToFrontContainer)) {
-      disableScrolling();
-      const frontContainer = document.querySelector(".frontContainer");
-      gsap.fromTo(landingPage.current, { y: 0 }, { y: -window.innerHeight, duration: 1 });
-      gsap.fromTo(frontContainer, { y: 0 }, { y: -window.innerHeight, duration: 1 })
-        .then(() => {
-          enableScrolling();
-        });
-    } */
-  }
-
   const handleMouseMove = (e) => {
     if(e.pageY < landingPage.current.clientHeight) {
       setScrollToFrontContainer(true);
@@ -77,7 +60,7 @@ const LandingPage = () => {
         <Menu frontPage={true} />
         <HamburgerMenu />
       </menu>
-      <div className="centerLogo">
+      <div ref={centerLogo} className="centerLogo">
         <Img loading="eager" className="centerLogo__img" fluid={data.centerLogo.childImageSharp.fluid} alt="drokam-logo" />
         <img loading="eager" className="centerLogo__img--mobile" src={require("../../static/img/drokam-logo-mobile.png")} alt="drokam-logo" />
       </div>

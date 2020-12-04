@@ -9,7 +9,7 @@ import PageMenu from "./PageMenu"
 import HamburgerMenu from "./HamburgerMenu"
 import PageMobileMenu from "./PageMobileMenu"
 
-const Header = ({title}) => {
+const Header = ({title, mark}) => {
   const [menu, setMenu] = useState(false);
 
   const data = useStaticQuery(graphql`
@@ -49,7 +49,7 @@ const Header = ({title}) => {
         </Link>
       </div>
       <menu className="topMenu">
-        <PageMenu />
+        <PageMenu mark={mark} />
       </menu>
       <h1 className="pageHeader__h">
         {title}

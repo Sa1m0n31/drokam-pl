@@ -20,7 +20,7 @@ export default function Home() {
       <meta name="apple-mobile-web-app-status-bar-style" content="#DB2B39" />
     </Helmet>
     <div className="container">
-      <Header title="Rolnictwo precyzyjne" />
+      <Header title="Rolnictwo precyzyjne" mark={2} />
       <RolnictwoPrecyzyjne />
       <Footer />
     </div>

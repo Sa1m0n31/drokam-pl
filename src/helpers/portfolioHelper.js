@@ -33,9 +33,10 @@ const youtubeLinks = {
     type: 1,
     payload: "J3xr1d4qosI"
   },
+
   fotografieReklamowe1: {
     type: 2,
-    payload: "drokam-6.jpg"
+    payload: "drokam-10.jpg"
   },
   fotografieReklamowe2: {
     type: 2,
@@ -55,19 +56,19 @@ const youtubeLinks = {
   },
   imprezyOkolicznosciowe3: {
     type: 2,
-    payload: "drokam-7.jpg"
+    payload: "drokam-6.jpg"
   },
   rolnictwoPrecyzyjne1: {
     type: 2,
-    payload: "drokam-8.jpg"
+    payload: "drokam-7.jpg"
   },
   rolnictwoPrecyzyjne2: {
     type: 2,
-    payload: "drokam-9.jpg"
+    payload: "drokam-8.jpg"
   },
   rolnictwoPrecyzyjne3: {
     type: 2,
-    payload: "drokam-10.jpg"
+    payload: "drokam-9.jpg"
   }
 };
 

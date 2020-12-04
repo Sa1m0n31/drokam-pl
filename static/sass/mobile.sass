@@ -10,6 +10,12 @@
   .sectionHeader::before
     height: 6px
 
+  .moveUpBtn
+    width: 35px
+    height: 35px
+    font-size: 25px
+    padding-top: 8px
+
 /* Landing page and page header */
 
 @media(max-width: 1300px)
@@ -384,6 +390,9 @@
       margin-bottom: 60px
       +flex(column, center, center)
 
+      .socialMedia__item
+        justify-content: center !important
+
       .right__offer
         .right__offer__list
           .right__offer__list__item
@@ -629,6 +638,7 @@
       height: auto
       margin-top: 0
       margin-bottom: 50px
+      padding-bottom: 0
       +flex(column, center, center)
 
       .portfolioSection__title
@@ -654,11 +664,14 @@
 // Filmy promocyjne
 
 @media(min-width: 1900px)
+  .section--infobox
+    padding: 20px 120px !important
+
   .section--infobox, .filmyPromocyjneBottom
     width: 1700px !important
 
   .filmyPromocyjneTop
-    grid-template-columns: calc(30% - 7px) calc(40% - 7px) calc(30% - 7px)
+    grid-template-columns: calc(28% - 7px) calc(44% - 7px) calc(28% - 7px)
 
 @media(max-width: 1500px)
   .filmyPromocyjneTop, .filmyPromocyjneBottom, .section--infobox

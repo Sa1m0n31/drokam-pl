@@ -20,7 +20,7 @@ export default function Home() {
       <meta name="apple-mobile-web-app-status-bar-style" content="#DB2B39" />
     </Helmet>
     <div className="container filmyPromocyjne-page">
-      <Header title="Filmy promocyjne" />
+      <Header title="Filmy promocyjne" mark={2} />
       <FilmyPromocyjne />
       <Footer />
     </div>

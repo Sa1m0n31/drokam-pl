@@ -6,7 +6,7 @@ const Menu = ({frontPage}) => {
   const oNasScroll = () => {
     if(frontPage) {
       if(typeof document !== 'undefined') {
-        const oNasSection = document.querySelector("#onas");
+        const oNasSection = document.querySelector("#num1");
         oNasSection.scrollIntoView({
           behavior: "smooth",
           top: 0,

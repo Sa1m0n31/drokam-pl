@@ -6,6 +6,7 @@ import youtubeLinks from "../helpers/portfolioHelper";
 
 const Portfolio = ({id}) => {
   let [play, setPlay] = useState(false);
+  let [video, setVideo] = useState(null);
 
   useEffect(() => {
     setPlay(true);
@@ -17,27 +18,23 @@ const Portfolio = ({id}) => {
 
   const handlePlay = (n) => {
     setPlay(false);
-    let video;
     switch(n) {
       case 1:
-        video = youtubeLinks.filmyPromocyjne1;
+        setVideo(youtubeLinks.filmyPromocyjne1);
         break;
       case 2:
-        video = youtubeLinks.filmyPromocyjne2;
-        break;
-      case 3:
-        video = youtubeLinks.filmyPromocyjne3;
+        setVideo(youtubeLinks.filmyPromocyjne2);
         break;
       default:
+        setVideo(youtubeLinks.filmyPromocyjne3);
         break;
     }
-    console.log(play);
     setPlay(!play);
   }
 
   return (<section ref={id} className="portfolioSection">
     <div className="yt">
-      {play ? <Youtube medium={youtubeLinks.filmyPromocyjne1} /> : ""}
+      {play ? <Youtube medium={video} /> : ""}
     </div>
         <header className="sectionHeader">
           <h2 className="sectionHeader__h">
@@ -47,15 +44,15 @@ const Portfolio = ({id}) => {
         <main className="portfolio__content">
           <div className="portfolio__content__item--container" onClick={() => handlePlay(1)}>
             <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
-            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/hqdefault.jpg`} />
+            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/maxresdefault.jpg`} />
           </div>
           <div className="portfolio__content__item--container" onClick={() => handlePlay(2)}>
             <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
-            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/hqdefault.jpg`} />
+            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/maxresdefault.jpg`} />
           </div>
           <div className="portfolio__content__item--container" onClick={() => handlePlay(3)}>
             <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
-            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/hqdefault.jpg`} />
+            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/maxresdefault.jpg`} />
           </div>
         </main>
         <section className="portfolio__bottom">

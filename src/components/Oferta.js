@@ -71,9 +71,8 @@ const Oferta = () => {
 
   return (<main className="ofertaMain">
       <div className="ofertaMain__content">
-        <div className="ofertaItem">
-          <Link onMouseOver={() => hoverHandle(1)}
-                onMouseLeave={() => leaveHandle(1)}
+        <div onMouseOver={() => hoverHandle(1)} onMouseLeave={() => leaveHandle(1)} className="ofertaItem">
+          <Link
                 className="ofertaItem__link"
                 to="/filmy-promocyjne">
             <Img className="ofertaItem__img" fluid={data.oferta1.childImageSharp.fluid} alt="drokam-oferta-1" />

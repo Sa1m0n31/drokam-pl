@@ -282,6 +282,12 @@
         height: calc(300px / 1.5)
         margin: 25px 0
 
+      .portfolio__content__item--container:hover .portfolio__content__item
+        transform: scale(1.04)
+
+      .portfolio__content__item--container:hover::after
+        opacity: 0
+
 /* Zaufali nam */
 
 @media(max-width: 1300px)
@@ -424,7 +430,7 @@
 
 @media(max-width: 1600px)
   .formSection
-    margin-bottom: 150px
+    padding-bottom: 150px
 
 @media(max-width: 1300px)
   .formSection

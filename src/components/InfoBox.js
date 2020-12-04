@@ -3,8 +3,9 @@ import React, { useEffect } from "react";
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery, Link } from "gatsby";
 
-const InfoBox = ({title, p1, p2, p3, button, background, img}) => {
+const InfoBox = ({title, p1, p2, p3, button, background, img, id}) => {
   let image;
+  let num;
 
   const data = useStaticQuery(graphql`
       query AbousUsSectionQuery {
@@ -35,16 +36,19 @@ const InfoBox = ({title, p1, p2, p3, button, background, img}) => {
     switch(img) {
       case 1:
         image = data.data1;
+        num = "num1";
         break;
       case 2:
         image = data.data2;
+        num = "num2";
         break;
       default:
         image = data.data3;
+        num = "num3";
         break;
     }
 
-  return (<section className={background ? "infoBox section--infobox" : "infoBox"} id="onas">
+  return (<section ref={id} className={background ? "infoBox section--infobox" : "infoBox"} id={num}>
     <div className="infoBox__left">
       <img className="infoBox__sygnet" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-sygnet-2" />
       <h2 className={!button ? "left__header" : "left__header header--infobox"}>

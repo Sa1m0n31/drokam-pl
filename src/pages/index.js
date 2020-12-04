@@ -23,6 +23,7 @@ export default function Home() {
       <LandingPage />
       <FrontContainer />
       <Footer />
+      <button className="moveUpBtn">^</button>
   </div>
     </>);
 }

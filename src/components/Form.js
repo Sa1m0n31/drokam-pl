@@ -9,7 +9,7 @@ export default class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      container: React.createRef(),
+      container: this.props.id,
       nameInput: React.createRef(),
       contactInput: React.createRef(),
       formRef: React.createRef(),

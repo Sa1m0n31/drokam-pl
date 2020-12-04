@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 
-const Partners = () => {
+const Partners = ({id}) => {
   const slider = useRef(null);
 
   const scroll = (left) => {
@@ -21,7 +21,7 @@ const Partners = () => {
     }
   }
 
-  return (<section className="partnersSection">
+  return (<section ref={id} className="partnersSection">
       <header className="sectionHeader">
         <h2 className="sectionHeader__h">
           Zaufali nam

@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Youtube from "./Youtube";
 import youtubeLinks from "../helpers/portfolioHelper";
 
-const Portfolio = () => {
+const Portfolio = ({id}) => {
   let [play, setPlay] = useState(false);
 
   useEffect(() => {
@@ -35,8 +35,10 @@ const Portfolio = () => {
     setPlay(!play);
   }
 
-  return (<section className="portfolioSection">
-    {play ? <Youtube medium={youtubeLinks.filmyPromocyjne1} /> : ""}
+  return (<section ref={id} className="portfolioSection">
+    <div className="yt">
+      {play ? <Youtube medium={youtubeLinks.filmyPromocyjne1} /> : ""}
+    </div>
         <header className="sectionHeader">
           <h2 className="sectionHeader__h">
               Ostatnie realizacje

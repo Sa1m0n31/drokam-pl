@@ -55,6 +55,7 @@ $grey: #2E2E2E
   font-family: 'Hind Siliguri', sans-serif
 
 .container
+  position: relative
   background: #000
 
 body, html
@@ -203,6 +204,27 @@ label,
 a
   -webkit-tap-highlight-color: rgba(0,0,0,0)
 
+// Move up btn
+
+.moveUpBtn
+  width: 60px
+  height: 60px
+  position: fixed
+  bottom: 20px
+  right: 20px
+  background: $primary
+  border-radius: 50%
+  font-size: 40px
+  color: #fff
+  +flex(row, center, center)
+  padding-top: 15px
+  cursor: pointer
+  opacity: 0
+  transition: .2s
+
+.moveUpBtn:hover
+  opacity: 1
+
 // Landing page
 
 .hamburgerMenu
@@ -219,6 +241,7 @@ a
     left: 0
     max-height: 100vh
     min-height: 800px
+    height: 100%
 
   .topMenu
     position: absolute
@@ -272,8 +295,6 @@ a
 .frontContainer
   position: relative
   width: 100%
-  //height: 100vh
-  overflow-y: scroll
   background: url("./../img/drokam-front-background.png") fixed
   scrollbar-width: none
 
@@ -694,7 +715,8 @@ a
     .portfolioSection__content
       background-color: #2E2E2E
       width: 70%
-      height: 264px
+      padding: 20px 0
+      height: fit-content
       +flex(row, space-evenly, center)
 
       .portfolioSection__content__player
@@ -702,14 +724,15 @@ a
         z-index: 2
         background: transparent
         width: 30%
-        height: 85%
+        height: fit-content
         cursor: pointer
         transition: .2s
 
         .portfolioSection__content__img
           width: 100%
-          height: 100%
+          height: auto
           z-index: 1
+          max-width: 100%
 
           *
             z-index: 1 !important
@@ -869,9 +892,8 @@ a
   z-index: 2
   color: #fff
   width: 100%
-  padding: 30px 140px
+  padding: 60px 140px
   margin-top: 20px
-  margin-bottom: 100px
   +flex(column, center, center)
 
   .formSection__header
@@ -1012,15 +1034,17 @@ a
   height: 500px
 
 .yt
-  position: absolute
+
   left: 0
+  top: 0
 
 .youtube
   position: fixed
   top: 0
   left: 0
+  bottom: 0
   width: 100vw
-  height: 100vh
+  height: 100vh !important
   background: rgba(0, 0, 0, .5)
   z-index: 10
   +flex(row, center, center)

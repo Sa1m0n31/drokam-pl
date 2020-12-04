@@ -1,7 +1,7 @@
 import React from "react";
 
 const ImprezyOkolicznosciowe = () => {
-  return <main className="portfolioSubpage">
+  return <main className="portfolioSubpage extraMargin">
     <main className="imprezyOkolicznosciowe__main">
       <img className="video-1" src={require("../../static/img/player.png")} alt="player" />
       <img className="video-2" src={require("../../static/img/player.png")} alt="player" />

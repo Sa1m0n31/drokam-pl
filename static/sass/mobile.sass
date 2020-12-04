@@ -277,7 +277,7 @@
       max-height: none
       height: fit-content
 
-      .portfolio__content__item
+      .portfolio__content__item--container
         width: 300px
         height: calc(300px / 1.5)
         margin: 25px 0
@@ -310,7 +310,7 @@
           width: 100px
           height: 100px
 
-@media(max-width: 600px)
+@media(max-width: 900px)
   .partnersSection
     .partners__content
       .partners__content__inside
@@ -469,6 +469,7 @@
       width: 100% !important
       text-align: center
       margin-left: 0 !important
+      font-size: 12px !important
 
 @media(max-width: 500px)
   .formSection
@@ -646,16 +647,26 @@
 
 // Filmy promocyjne
 
-@media(max-width: 1500px)
+@media(min-width: 1900px)
+  .section--infobox, .filmyPromocyjneBottom
+    width: 1700px !important
+
   .filmyPromocyjneTop
+    grid-template-columns: calc(30% - 7px) calc(40% - 7px) calc(30% - 7px)
+
+@media(max-width: 1500px)
+  .filmyPromocyjneTop, .filmyPromocyjneBottom, .section--infobox
+    width: 60vw !important
     flex-wrap: wrap
-    +flex(row, center, center)
+    margin-left: auto
+    margin-right: auto
+    +flex(row, space-between, center)
 
     .filmyPromocyjne__third
       display: none
 
     > *
-      width: 40%
+      width: 45%
       background: transparent
 
       .filmyPromocyjne__img
@@ -663,21 +674,24 @@
         height: 100%
 
 @media(max-width: 1000px)
-  .filmyPromocyjneTop, .filmyPromocyjneBottom
-    width: 60vw
+  .filmyPromocyjneTop, .filmyPromocyjneBottom, .section--infobox
+    width: 60vw !important
     margin: 20px auto
     +flex(column, center, center)
 
     > *
-      width: 100%
+      width: 100% !important
+
+    .infoBox__right
+      justify-content: center
 
     .playBtn, .playBig
       width: 50px !important
       height: 50px !important
 
 @media(max-width: 500px)
-  .filmyPromocyjneTop, .filmyPromocyjneBottom
-    width: 80vw
+  .filmyPromocyjneTop, .filmyPromocyjneBottom, .section--infobox
+    width: 80vw !important
 
 // Youtube
 

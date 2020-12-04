@@ -170,7 +170,10 @@ a
   font-size: calc(18px + 25 * ((100vw - 900px)/(1100)))
 
 .section--infobox
+  width: calc((100vw - 280px) / 10 * 10) !important
   background: rgba(255, 255, 255, .1)
+  margin: 0 auto !important
+  padding: 20px 50px !important
 
 .red
   color: $primary
@@ -399,6 +402,7 @@ a
     height: 350px
     margin: 0 auto
     background: url("../img/drokam-partners.png") no-repeat
+    background-size: cover !important
     +flex(row, center, center)
 
     .partnersBackground
@@ -787,8 +791,9 @@ a
   grid-column-gap: 10px
   grid-row-gap: 10px
   justify-content: center
-  margin-bottom: 100px
+  margin: 80px auto 20px auto
   color: #fff
+  max-width: 1700px
 
   *
     position: relative
@@ -830,12 +835,14 @@ a
 
 .filmyPromocyjneBottom
   display: grid
-  grid-template-columns: calc((100vw - 280px) / 3 * 2 - 5px) calc((100vw - 280px) / 3 - 5px)
+  grid-template-columns: 66% 33%
   grid-template-rows: repeat(2, 302px)
   grid-column-gap: 10px
   grid-row-gap: 10px
-  margin: 180px 0 100px 0
+  margin: 20px auto 100px auto
   justify-content: center
+  max-width: 1700px
+  width: calc((100vw - 280px) / 10 * 10)
 
   *
     position: relative
@@ -849,6 +856,7 @@ a
   .filmyPromocyjne__second
     grid-column: 2
     grid-row: 1
+    justify-content: flex-end !important
 
   .filmyPromocyjne__third
     grid-column: 2
@@ -1094,6 +1102,10 @@ a
         border: 1px solid #fff
 
 // Imprezy okolicznosciowe
+
+@media(min-width: 1000px)
+  .extraMargin
+    margin-top: 50px
 
 .imprezyOkolicznosciowe__main
   width: 100%

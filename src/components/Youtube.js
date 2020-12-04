@@ -10,7 +10,7 @@ const Youtube = ({medium}) => {
   const [playState, setPlayState] = useState(true);
   let data = useStaticQuery(graphql`
       query Youtube {
-          img: file(relativePath: { eq: "drokam-1.png" }) {
+          img: file(relativePath: { eq: "drokam-11.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 1300, maxHeight: 1200) {
                       ...GatsbyImageSharpFluid

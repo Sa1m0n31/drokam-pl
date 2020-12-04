@@ -22,20 +22,22 @@ const FrontContainer = () => {
       window.addEventListener("scroll", () => {
         console.log(window.pageYOffset);
         if(window.pageYOffset > 200) {
-          document.querySelector(".moveUpBtn").style.opacity = ".8";
+          if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = ".8";
         }
         else {
-          document.querySelector(".moveUpBtn").style.opacity = "0";
+          if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = "0";
         }
       });
 
-      document.querySelector('.moveUpBtn').addEventListener("click", () => {
-        document.querySelector(".landingPage").scrollIntoView({
-          top: 0,
-          left: 0,
-          behavior: "smooth"
+      if(document.querySelector(".moveUpBtn") !== null) {
+        document.querySelector('.moveUpBtn').addEventListener("click", () => {
+          document.querySelector(".landingPage").scrollIntoView({
+            top: 0,
+            left: 0,
+            behavior: "smooth"
+          });
         });
-      });
+      }
 
       gsap.fromTo(one.current, { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: .5, scrollTrigger: {
         trigger: "#num1",

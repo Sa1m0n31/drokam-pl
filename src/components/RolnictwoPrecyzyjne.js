@@ -6,28 +6,28 @@ import Img from 'gatsby-image';
 const RolnictwoPrecyzyjne = () => {
   const data = useStaticQuery(graphql`
       query RolnictwoPrecyzyjneQuery {
-          row11: file(relativePath: { eq: "dron.png" }) {
+          row11: file(relativePath: { eq: "drokam-8.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 500, maxHeight: 500) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          row12: file(relativePath: { eq: "dron.png" }) {
+          row12: file(relativePath: { eq: "drokam-9.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 500, maxHeight: 500) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          row21: file(relativePath: { eq: "dron.png" }) {
+          row21: file(relativePath: { eq: "drokam-10.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 800, maxHeight: 500) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          row22: file(relativePath: { eq: "dron.png" }) {
+          row22: file(relativePath: { eq: "drokam-11.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 800, maxHeight: 500) {
                       ...GatsbyImageSharpFluid

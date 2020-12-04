@@ -8,14 +8,28 @@ import { gsap } from 'gsap/all';
 const Oferta = () => {
   const data = useStaticQuery(graphql`
       query Oferta {
-          oferta1: file(relativePath: { eq: "oferta-1.png" }) {
+          oferta1: file(relativePath: { eq: "drokam-6.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 812, maxHeight: 501) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          oferta2: file(relativePath: { eq: "oferta-2.png" }) {
+          oferta2: file(relativePath: { eq: "drokam-7.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 812, maxHeight: 501) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          oferta3: file(relativePath: { eq: "drokam-8.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 812, maxHeight: 501) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          oferta4: file(relativePath: { eq: "drokam-9.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 812, maxHeight: 501) {
                       ...GatsbyImageSharpFluid
@@ -88,7 +102,7 @@ const Oferta = () => {
             onMouseLeave={() => leaveHandle(3)}
             className="ofertaItem__link"
             to="/imprezy-okolicznosciowe">
-            <Img className="ofertaItem__img" fluid={data.oferta1.childImageSharp.fluid} alt="drokam-oferta-3" />
+            <Img className="ofertaItem__img" fluid={data.oferta3.childImageSharp.fluid} alt="drokam-oferta-3" />
           </Link>
           <h2 ref={three} className="ofertaItem__label">
             <span className="ofertaItem__label--before" />
@@ -101,7 +115,7 @@ const Oferta = () => {
             onMouseLeave={() => leaveHandle(4)}
             className="ofertaItem__link"
             to="/rolnictwo-precyzyjne">
-            <Img className="ofertaItem__img" fluid={data.oferta2.childImageSharp.fluid} alt="drokam-oferta-4" />
+            <Img className="ofertaItem__img" fluid={data.oferta4.childImageSharp.fluid} alt="drokam-oferta-4" />
           </Link>
           <h2 ref={four} className="ofertaItem__label">
             <span className="ofertaItem__label--before" />

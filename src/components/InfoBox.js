@@ -9,21 +9,21 @@ const InfoBox = ({title, p1, p2, p3, button, background, img, id}) => {
 
   const data = useStaticQuery(graphql`
       query AbousUsSectionQuery {
-          data1: file(relativePath: { eq: "drokam-2.png" }) {
+          data1: file(relativePath: { eq: "drokam-4.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 701, maxHeight: 393) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          data2: file(relativePath: { eq: "drokam-4.png" }) {
+          data2: file(relativePath: { eq: "drokam-2.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 701, maxHeight: 393) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          data3: file(relativePath: { eq: "drokam-5.png" }) {
+          data3: file(relativePath: { eq: "drokam-3.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 701, maxHeight: 393) {
                       ...GatsbyImageSharpFluid

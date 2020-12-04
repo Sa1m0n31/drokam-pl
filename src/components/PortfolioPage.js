@@ -13,14 +13,56 @@ const PortfolioPage = () => {
 
   const data = useStaticQuery(graphql`
       query PortfolioItems {
-          portfolio1: file(relativePath: { eq: "oferta-1.png" }) {
+          portfolio1: file(relativePath: { eq: "drokam-5.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 680, maxHeight: 357) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          portfolio2: file(relativePath: { eq: "oferta-2.png" }) {
+          portfolio2: file(relativePath: { eq: "drokam-6.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 680, maxHeight: 357) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          portfolio3: file(relativePath: { eq: "drokam-3.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 680, maxHeight: 357) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          portfolio4: file(relativePath: { eq: "drokam-4.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 680, maxHeight: 357) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          portfolio5: file(relativePath: { eq: "drokam-8.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 680, maxHeight: 357) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          portfolio6: file(relativePath: { eq: "drokam-9.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 680, maxHeight: 357) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          portfolio7: file(relativePath: { eq: "drokam-10.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 680, maxHeight: 357) {
+                      ...GatsbyImageSharpFluid
+                  }
+              }
+          }
+          portfolio8: file(relativePath: { eq: "drokam-11.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 680, maxHeight: 357) {
                       ...GatsbyImageSharpFluid
@@ -135,15 +177,15 @@ const PortfolioPage = () => {
       <h2 className="portfolioSection__title">
           Fotografie<br/>reklamowe
       </h2>
-      <div className="portfolioSection__content">
+      <div className="portfolioSection__content bigger">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("fotografieReklamowe1")} >
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("fotografieReklamowe2")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio2.childImageSharp.fluid} alt="portfolio-1" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("fotografieReklamowe3")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio3.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>
       <button className="btn btn--portfolio btn--zobaczWiecej">
@@ -156,15 +198,15 @@ const PortfolioPage = () => {
       <h2 className="portfolioSection__title">
         Imprezy<br/>okolicznościowe
       </h2>
-      <div className="portfolioSection__content">
+      <div className="portfolioSection__content bigger">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("imprezyOkolicznosciowe1")} >
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio4.childImageSharp.fluid} alt="portfolio-1" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("imprezyOkolicznosciowe2")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio5.childImageSharp.fluid} alt="portfolio-1" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("imprezyOkolicznosciowe3")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio6.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>
       <button className="btn btn--portfolio btn--zobaczWiecej">
@@ -177,15 +219,15 @@ const PortfolioPage = () => {
       <h2 className="portfolioSection__title">
         Rolnictwo<br/>precyzyjne
       </h2>
-      <div className="portfolioSection__content">
+      <div className="portfolioSection__content bigger">
         <button className="portfolioSection__content__player" onClick={() => playYoutube("rolnictwoPrecyzyjne1")} >
           <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("rolnictwoPrecyzyjne2")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio6.childImageSharp.fluid} alt="portfolio-1" />
         </button>
         <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("rolnictwoPrecyzyjne3")}>
-          <Img className="portfolioSection__content__img" fluid={data.portfolio1.childImageSharp.fluid} alt="portfolio-1" />
+          <Img className="portfolioSection__content__img" fluid={data.portfolio8.childImageSharp.fluid} alt="portfolio-1" />
         </button>
       </div>
       <button className="btn btn--portfolio btn--zobaczWiecej">

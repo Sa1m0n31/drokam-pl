@@ -74,6 +74,10 @@ const FilmyPromocyjne = () => {
         <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne5.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
+      <button className="filmyPromocyjne__player filmyPromocyjne__sixth" onClick={() => handlePlay(1)}>
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne6.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
+        <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
+      </button>
     </div>
 
     <InfoBox

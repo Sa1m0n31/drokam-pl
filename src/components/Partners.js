@@ -34,16 +34,16 @@ const Partners = ({id}) => {
         </div>
         <div ref={slider} className="partners__content__inside">
           <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+            <img src={require("../../static/img/drokam-partnerzy1.png")} alt="kuhn" />
           </div>
           <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+            <img src={require("../../static/img/drokam-partnerzy4.png")} alt="kuhn" />
           </div>
           <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+            <img src={require("../../static/img/drokam-partnerzy3.png")} alt="kuhn" />
           </div>
           <div className="partners__content__item">
-            <img src={require("../../static/img/kuhn.png")} alt="kuhn" />
+            <img src={require("../../static/img/drokam-partnerzy2.png")} alt="kuhn" />
           </div>
         </div>
         <div className="partners__content__arrow d-none">

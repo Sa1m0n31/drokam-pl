@@ -18,8 +18,8 @@ const Footer = () => {
             </div>
             <div className="daneKontaktowe__content__item">
               <img className="kontaktImg" src={require("../../static/img/phone.png")} alt="drokam-kontakt-telefon" />
-              <h4 className="kontaktItem">123 456 789</h4>
-              <h4 className="kontaktItem">123 456 789</h4>
+              <h4 className="kontaktItem">666 151 690</h4>
+              <h4 className="kontaktItem">698 300 662</h4>
             </div>
             <div className="daneKontaktowe__content__item">
               <img className="kontaktImg" src={require("../../static/img/mail.png")} alt="drokam-kontakt-mail" />
@@ -30,13 +30,13 @@ const Footer = () => {
     </div>
     <div className="footer__right">
         <div className="right__socialMedia">
-          <a className="socialMedia__item" href="https://facebook.com" rel="noreferrer" target="_blank">
+          <a className="socialMedia__item" href="https://www.facebook.com/drokamstudiopl" rel="noreferrer" target="_blank">
             <img src={require("../../static/img/facebook.png")} alt="facebook" />
           </a>
-          <a className="socialMedia__item" href="https://facebook.com" rel="noreferrer" target="_blank">
+          <a className="socialMedia__item" href="https://www.instagram.com/drokam_studio/?fbclid=IwAR1D1mZpyhFjGtYB0YvfTP85UB-7istsVOYwharz4sOihignbjVaWDQ3FtQ" rel="noreferrer" target="_blank">
             <img src={require("../../static/img/instagram.png")} alt="instagram" />
           </a>
-          <a className="socialMedia__item" href="https://facebook.com" rel="noreferrer" target="_blank">
+          <a className="socialMedia__item" href="https://www.youtube.com/channel/UCMhrMcTfkhCWtZRaVuGDraQ?fbclid=IwAR0mjo3x9f-Oxv7bL75T0g29znW3w3cBjRT7JFloK9Meb7_KsBAYB1Cuf0s" rel="noreferrer" target="_blank">
             <img src={require("../../static/img/youtube.png")} alt="youtube" />
           </a>
         </div>

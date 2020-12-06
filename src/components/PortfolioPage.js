@@ -200,27 +200,6 @@ const PortfolioPage = () => {
       </button>
     </section>
 
-    <section className="portfolioSectionP">
-      <img src={require("../../static/img/drokam-sygnet.png")} alt="drokam-portfolio" />
-      <h2 className="portfolioSection__title">
-        Imprezy<br/>okolicznościowe
-      </h2>
-      <div className="portfolioSection__content bigger">
-        <button className="portfolioSection__content__player" onClick={() => playYoutube("imprezyOkolicznosciowe1")} >
-          <Img className="portfolioSection__content__img" fluid={data.imprezyOkolicznosciowe1.childImageSharp.fluid} alt="portfolio-1" />
-        </button>
-        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("imprezyOkolicznosciowe2")}>
-          <Img className="portfolioSection__content__img" fluid={data.imprezyOkolicznosciowe2.childImageSharp.fluid} alt="portfolio-1" />
-        </button>
-        <button className="portfolioSection__content__player over-1000" onClick={() => playYoutube("imprezyOkolicznosciowe3")}>
-          <Img className="portfolioSection__content__img" fluid={data.imprezyOkolicznosciowe3.childImageSharp.fluid} alt="portfolio-1" />
-        </button>
-      </div>
-      <button className="btn btn--portfolio btn--zobaczWiecej">
-        <Link to="/imprezy-okolicznosciowe">Zobacz więcej</Link>
-      </button>
-    </section>
-
     <section className="portfolioSectionP filmyPromocyjne">
       <img src={require("../../static/img/drokam-sygnet.png")} alt="drokam-portfolio" />
       <h2 className="portfolioSection__title">

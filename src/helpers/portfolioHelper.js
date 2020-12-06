@@ -3,7 +3,7 @@ import React from "react"
 const youtubeLinks = {
   filmyPromocyjne1: {
     type: 1,
-    payload: "y5mXLSy2qjM"
+    payload: "J3xr1d4qosI"
   },
   filmyPromocyjne2: {
     type: 1,
@@ -31,7 +31,7 @@ const youtubeLinks = {
   },
   filmyPromocyjne3: {
     type: 1,
-    payload: "J3xr1d4qosI"
+    payload: "j-x5F83L9Ug"
   },
 
   fotografieReklamowe1: {

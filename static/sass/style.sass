@@ -361,17 +361,7 @@ a
 
       img
         transform: scale(1.03)
-
-  .infoBox__right::after
-    content: ""
-    position: absolute
-    left: 70px
-    display: block
-    width: calc(100vw * 0.35)
-    height: calc((100vw * 0.37) / 1.78 + 20px)
-    max-width: 600px
-    max-height: calc(600px / 1.78 + 40px)
-    background-color: #2E2E2E
+        border-radius: 8%
 
 // Portfolio
 
@@ -463,6 +453,10 @@ a
         background-color: #fff
         margin: 0 10px
         +flex(row, center, center)
+
+        img
+          width: 100%
+          height: auto
 
     .partners__content__arrow
       width: 10%
@@ -847,7 +841,7 @@ a
 
 .filmyPromocyjneTop
   display: grid
-  grid-template-columns: calc((100vw - 280px) / 10 * 3 - 7px) calc((100vw - 280px) / 10 * 4 - 7px) calc((100vw - 280px) / 10 * 3 - 7px)
+  grid-template-columns: repeat(3, calc((100vw - 280px) / 99 * 33 - 7px))
   grid-template-rows: repeat(2, 225px)
   grid-column-gap: 10px
   grid-row-gap: 10px
@@ -877,7 +871,7 @@ a
 
   .filmyPromocyjne__third
     grid-column: 2
-    grid-row: 1 / span 2
+    grid-row: 1
 
   .filmyPromocyjne__fourth
     grid-column: 3
@@ -885,6 +879,10 @@ a
 
   .filmyPromocyjne__fifth
     grid-column: 3
+    grid-row: 2
+
+  .filmyPromocyjne__sixth
+    grid-column: 2
     grid-row: 2
 
 .playBtn

@@ -235,25 +235,25 @@ export default class Form extends React.Component {
               method="POST"
               onSubmit={this.handleSubmit}
         >
-          <input ref={this.state.nameInput} className="form__name" type="text" name="name"
+            <input ref={this.state.nameInput} className="form__name" type="text" name="name"
                  placeholder="Imie i nazwisko / Nazwa firmy *"
                  value={this.state.name}
                  onChange={(e) => this.handleChange(e)} />
-          <input ref={this.state.contactInput} className="form__contact" type="text" name="contact"
-                 placeholder="Numer telefonu / Adres email *"
-                 value={this.state.contact}
-                 onChange={(e) => this.handleChange(e)} />
-          <textarea className="form__msg" name="msg"
+                 <input ref={this.state.contactInput} className="form__contact" type="text" name="contact"
+                   placeholder="Numer telefonu / Adres email *"
+                   value={this.state.contact}
+                   onChange={(e) => this.handleChange(e)} />
+                 <textarea className="form__msg" name="msg"
                     placeholder="Wiadomość"
                     value={this.state.msg}
                     onChange={e => this.handleChange(e)} />
-
           <div className="form__usluga">
             <h4 className="form__usluga__header">Wybierz, która pozycja z oferty Cię interesuje:</h4>
             <div className="form__usluga__item">
               <label>
                 <button className={this.state.fotografiaReklamowa ? "btn usluga__item__btn usluga__item__checked" : "btn usluga__item__btn"}
                         name="fotografiaReklamowa"
+                        aria-label="Fotografie Reklamowa"
                         onClick={e => this.handleButton(e)}>
                   <img onClick={() => this.handleButton("fotografiaReklamowa")} className={this.state.fotografiaReklamowa ? "" : "d-none"} src={require("../../static/img/check.png")} alt="ok" />
                 </button>
@@ -264,6 +264,7 @@ export default class Form extends React.Component {
               <label>
                 <button className={this.state.filmyPromocyjne ? "btn usluga__item__btn usluga__item__checked" : "btn usluga__item__btn"}
                         name="filmyPromocyjne"
+                        aria-label="Filmy promocyjne"
                         onClick={e => this.handleButton(e)}>
                   <img onClick={() => this.handleButton("filmyPromocyjne")} className={this.state.filmyPromocyjne ? "" : "d-none"} src={require("../../static/img/check.png")} alt="ok" />
                 </button>
@@ -274,6 +275,7 @@ export default class Form extends React.Component {
               <label>
                 <button className={this.state.imprezyOkolicznosciowe ? "btn usluga__item__btn usluga__item__checked" : "btn usluga__item__btn"}
                         name="imprezyOkolicznosciowe"
+                        aria-label="Imprezy okolicznościowe"
                         onClick={e => this.handleButton(e)}>
                   <img onClick={() => this.handleButton("imprezyOkolicznosciowe")} className={this.state.imprezyOkolicznosciowe ? "" : "d-none"} src={require("../../static/img/check.png")} alt="ok" />
                 </button>
@@ -284,6 +286,7 @@ export default class Form extends React.Component {
               <label>
                 <button className={this.state.rolnictwoPrecyzyjne ? "btn usluga__item__btn usluga__item__checked" : "btn usluga__item__btn"}
                         name="rolnictwoPrecyzyjne"
+                        aria-label="Rolnictwo precyzyjne"
                         onClick={e => this.handleButton(e)}>
                   <img onClick={() => this.handleButton("rolnictwoPrecyzyjne")} className={this.state.rolnictwoPrecyzyjne ? "" : "d-none"} src={require("../../static/img/check.png")} alt="ok" />
                 </button>
@@ -294,8 +297,8 @@ export default class Form extends React.Component {
 
           <div className="recaptcha">
             This site is protected by reCAPTCHA and the Google
-            <a href="https://policies.google.com/privacy"> Privacy Policy</a> and
-            <a href="https://policies.google.com/terms"> Terms of Service</a> apply.
+            <a href="https://policies.google.com/privacy" rel="preconnect"> Privacy Policy</a> and
+            <a href="https://policies.google.com/terms" ref="preconnect"> Terms of Service</a> apply.
           </div>
 
           <ReCaptcha

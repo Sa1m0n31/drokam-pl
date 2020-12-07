@@ -66,9 +66,9 @@ const Footer = () => {
         </div>
     </div>
     <div className="footer__bottom">
-      <h6 className="footer__bottom__h">
+      <h5 className="footer__bottom__h">
         &copy; DROKAM 2020 Projekt i realizacja <a href="https://skylo.pl" target="_blank" rel="noreferrer">Skylo.pl</a>
-      </h6>
+      </h5>
     </div>
   </footer>);
 }

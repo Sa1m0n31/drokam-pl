@@ -10,7 +10,7 @@ import ImprezyOkolicznosciowe from "../components/ImprezyOkolicznosciowe";
 
 export default function Home() {
   return (<>
-    <Helmet>
+    <Helmet htmlAttributes={{lang: "pl"}}>
       <title>DroKam - najlepsze filmy w sieci</title>
       <meta charSet="utf-8" />
       <meta name="description" content="Drokam - filmy z drona, fotografie reklamowe, rolnictwo precyzyjne" />

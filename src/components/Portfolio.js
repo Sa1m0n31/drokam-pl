@@ -44,15 +44,15 @@ const Portfolio = ({id}) => {
         <main className="portfolio__content">
           <div className="portfolio__content__item--container" onClick={() => handlePlay(1)}>
             <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
-            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/maxresdefault.jpg`} />
+            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/maxresdefault.jpg`} alt="drokam-rolnictwo-precyzyjne" />
           </div>
           <div className="portfolio__content__item--container" onClick={() => handlePlay(2)}>
             <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
-            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/maxresdefault.jpg`} />
+            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne"/>
           </div>
           <div className="portfolio__content__item--container" onClick={() => handlePlay(3)}>
             <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
-            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/maxresdefault.jpg`} />
+            <img className="portfolio__content__item" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne3.payload}/maxresdefault.jpg`} alt="drokam-fotografie-reklamowe"/>
           </div>
         </main>
         <section className="portfolio__bottom">

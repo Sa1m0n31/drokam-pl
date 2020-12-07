@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef } from "react"
 
 import Menu from "./Menu";
 
-import { graphql, useStaticQuery, Link } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
 import { gsap } from 'gsap/all';
@@ -11,8 +11,6 @@ import HamburgerMenu from "./HamburgerMenu"
 const LandingPage = () => {
   const landingPage = useRef(null);
   const centerLogo = useRef(null);
-
-  const [scrollToFrontContainer, setScrollToFrontContainer] = useState(true);
 
   useEffect(() => {
     gsap.fromTo(centerLogo.current, { y: 300, opacity: 0 }, { y: 0, opacity: 1, duration: 1 });
@@ -44,16 +42,7 @@ const LandingPage = () => {
       }
   `);
 
-  const handleMouseMove = (e) => {
-    if(e.pageY < landingPage.current.clientHeight) {
-      setScrollToFrontContainer(true);
-    }
-    else {
-      setScrollToFrontContainer(false);
-    }
-  }
-
-  return (<div className="landingPage" ref={landingPage} onMouseMove={e => handleMouseMove(e)}>
+  return (<div className="landingPage" ref={landingPage}>
       <Img loading="eager" className="landingPageImg" fluid={data.landing.childImageSharp.fluid} alt="drokam" />
       <Img loading="eager" className="landingPageImg landingPageImg--mobile" fluid={data.landingMobile.childImageSharp.fluid} alt="drokam" />
       <menu className="topMenu">

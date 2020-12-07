@@ -35,7 +35,7 @@ const PortfolioPage = () => {
                   }
               }
           }
-          imprezyOkolicznosciowe1: file(relativePath: { eq: "drokam-4.jpg" }) {
+          imprezyOkolicznosciowe1: file(relativePath: { eq: "drokam-4.webp" }) {
               childImageSharp {
                   fluid(maxWidth: 680, maxHeight: 357) {
                       ...GatsbyImageSharpFluid

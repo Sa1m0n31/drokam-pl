@@ -61,7 +61,7 @@ const FotografieReklamowe = () => {
                   }
               }
           }
-          img8: file(relativePath: { eq: "drokam-4.jpg" }) {
+          img8: file(relativePath: { eq: "drokam-4.webp" }) {
               childImageSharp {
                   fluid(maxWidth: 2000, maxHeight: 1200) {
                       ...GatsbyImageSharpFluid

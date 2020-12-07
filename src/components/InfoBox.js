@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import Img from 'gatsby-image';
 import { graphql, useStaticQuery, Link } from "gatsby";
@@ -9,7 +9,7 @@ const InfoBox = ({title, p1, p2, p3, button, background, img, id}) => {
 
   const data = useStaticQuery(graphql`
       query AbousUsSectionQuery {
-          data1: file(relativePath: { eq: "drokam-4.jpg" }) {
+          data1: file(relativePath: { eq: "drokam-4.webp" }) {
               childImageSharp {
                   fluid(maxWidth: 701, maxHeight: 393) {
                       ...GatsbyImageSharpFluid

@@ -34,22 +34,22 @@ const Partners = ({id}) => {
         <div ref={slider} className="partners__content__inside">
           <div className="partners__content__item">
             <a href="https://www.kuhn.com.pl/" rel="noreferrer" target="_blank">
-                <img src={require("../../static/img/drokam-partnerzy1.png")} alt="kuhn" />
+                <img src={require("../../static/img/drokam-partnerzy1.webp")} alt="kuhn" />
             </a>
           </div>
           <div className="partners__content__item">
            <a href="http://www.krukowiak.com.pl/" rel="noreferrer" target="_blank">
-             <img src={require("../../static/img/drokam-partnerzy4.png")} alt="krukowiak" />
+             <img src={require("../../static/img/drokam-partnerzy4.webp")} alt="krukowiak" />
            </a>
           </div>
           <div className="partners__content__item">
             <a href="http://www.pomltd.com.pl/" rel="noreferrer" target='_blank'>
-              <img src={require("../../static/img/drokam-partnerzy3.png")} alt="pom-brodnica" />
+              <img src={require("../../static/img/drokam-partnerzy3.webp")} alt="pom-brodnica" />
             </a>
           </div>
           <div className="partners__content__item">
             <a href="https://www.vaderstad.com/pl/" rel="noreferrer" target="_blank">
-              <img src={require("../../static/img/drokam-partnerzy2.png")} alt="vaderstad" />
+              <img src={require("../../static/img/drokam-partnerzy2.webp")} alt="vaderstad" />
             </a>
           </div>
         </div>

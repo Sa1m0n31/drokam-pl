@@ -12,7 +12,7 @@ const FotografieReklamowe = () => {
 
   const data = useStaticQuery(graphql`
       query FotografieReklamoweQuery {
-          img1: file(relativePath: { eq: "drokam-2.jpg" }) {
+          img1: file(relativePath: { eq: "drokam-2.png" }) {
               childImageSharp {
                   fluid(maxWidth: 2000, maxHeight: 1200) {
                       ...GatsbyImageSharpFluid

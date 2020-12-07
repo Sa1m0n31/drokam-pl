@@ -21,14 +21,14 @@ const PortfolioPage = () => {
                   }
               }
           }
-          fotografieReklamowe2: file(relativePath: { eq: "drokam-2.jpg" }) {
+          fotografieReklamowe2: file(relativePath: { eq: "drokam-2.png" }) {
               childImageSharp {
                   fluid(maxWidth: 680, maxHeight: 357) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          fotografieReklamowe3: file(relativePath: { eq: "drokam-3.jpg" }) {
+          fotografieReklamowe3: file(relativePath: { eq: "drokam-3.png" }) {
               childImageSharp {
                   fluid(maxWidth: 680, maxHeight: 357) {
                       ...GatsbyImageSharpFluid

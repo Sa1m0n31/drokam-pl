@@ -213,8 +213,6 @@ export default class Form extends React.Component {
                 });
               });
           }
-        } else {
-          console.log("error");
         }
       };
       xhr.send(JSON.stringify(data));
@@ -235,19 +233,25 @@ export default class Form extends React.Component {
               method="POST"
               onSubmit={this.handleSubmit}
         >
-            <input ref={this.state.nameInput} className="form__name" type="text" name="name"
+          <label className="form__name">
+            <input ref={this.state.nameInput} type="text" name="name"
                  placeholder="Imie i nazwisko / Nazwa firmy *"
                  value={this.state.name}
                  onChange={(e) => this.handleChange(e)} />
-                 <input ref={this.state.contactInput} className="form__contact" type="text" name="contact"
+          </label>
+          <label className="form__contact">
+            <input ref={this.state.contactInput} type="text" name="contact"
                    placeholder="Numer telefonu / Adres email *"
                    value={this.state.contact}
                    onChange={(e) => this.handleChange(e)} />
-                 <textarea className="form__msg" name="msg"
+          </label>
+          <label className="form__msg">
+            <textarea name="msg"
                     placeholder="Wiadomość"
                     value={this.state.msg}
                     onChange={e => this.handleChange(e)} />
-          <div className="form__usluga">
+          </label>
+                    <div className="form__usluga">
             <h4 className="form__usluga__header">Wybierz, która pozycja z oferty Cię interesuje:</h4>
             <div className="form__usluga__item">
               <label>

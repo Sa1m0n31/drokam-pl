@@ -56,11 +56,11 @@ const youtubeLinks = {
   },
   fotografieReklamowe2: {
     type: 2,
-    payload: "drokam-2.jpg"
+    payload: "drokam-2.png"
   },
   fotografieReklamowe3: {
     type: 2,
-    payload: "drokam-3.jpg"
+    payload: "drokam-3.png"
   },
 
   rolnictwoPrecyzyjne1: {

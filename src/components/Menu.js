@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { Link, navigate } from 'gatsby';
 
 const Menu = ({frontPage}) => {
-  const [first, setFirst] = useState(true);
-  const [second, setSecond] = useState(true);
+  useEffect(() => {
+    console.log = function() {};
+  }, []);
 
   const oNasScroll = () => {
     if(frontPage) {

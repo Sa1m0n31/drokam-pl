@@ -7,6 +7,7 @@ const PageMenu = ({frontPage, mark}) => {
   const portfolio = useRef(null);
 
   useEffect(() => {
+      console.log = function() {};
       if(mark === 1) {
         oferta.current.style.opacity = 1;
         portfolio.current.style.opacity = 0;

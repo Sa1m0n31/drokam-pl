@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
 
 import Img from 'gatsby-image';
+import moveUpBtnHandle from "../helpers/moveUpBtn"
 
 const FotografieReklamowe = () => {
+  useEffect(() => {
+    moveUpBtnHandle();
+  }, []);
+
   const data = useStaticQuery(graphql`
       query FotografieReklamoweQuery {
           img1: file(relativePath: { eq: "drokam-2.jpg" }) {

@@ -6,6 +6,7 @@ import Img from 'gatsby-image';
 import youtubeLinks from "../helpers/portfolioHelper"
 
 import Youtube from "./Youtube";
+import moveUpBtnHandle from "../helpers/moveUpBtn"
 
 const PortfolioPage = () => {
   const [play, setPlay] = useState(false);
@@ -55,23 +56,23 @@ const PortfolioPage = () => {
                   }
               }
           }
-          rolnictwoPrecyzyjne1: file(relativePath: { eq: "drokam-7.jpg" }) {
+          rolnictwoPrecyzyjne1: file(relativePath: { eq: "ortofotomapa.png" }) {
               childImageSharp {
-                  fluid(maxWidth: 680, maxHeight: 357) {
+                  fluid(maxWidth: 5800, maxHeight: 3300) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          rolnictwoPrecyzyjne2: file(relativePath: { eq: "drokam-8.jpg" }) {
+          rolnictwoPrecyzyjne3: file(relativePath: { eq: "mapa-zdrowotnosci-roslin.png" }) {
               childImageSharp {
-                  fluid(maxWidth: 680, maxHeight: 357) {
+                  fluid(maxWidth: 5800, maxHeight: 3300) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          rolnictwoPrecyzyjne3: file(relativePath: { eq: "drokam-9.jpg" }) {
+          rolnictwoPrecyzyjne2: file(relativePath: { eq: "mapa-wysokosci-terenu.png" }) {
               childImageSharp {
-                  fluid(maxWidth: 680, maxHeight: 357) {
+                  fluid(maxWidth: 5800, maxHeight: 3300) {
                       ...GatsbyImageSharpFluid
                   }
               }
@@ -87,6 +88,7 @@ const PortfolioPage = () => {
   `);
 
   useEffect(() => {
+    moveUpBtnHandle();
     setPlay(true);
   }, [play]);
 
@@ -123,15 +125,6 @@ const PortfolioPage = () => {
       case "fotografieReklamowe3":
         setVideo(youtubeLinks.fotografieReklamowe3);
         break;
-      case "imprezyOkolicznosciowe1":
-        setVideo(youtubeLinks.imprezyOkolicznosciowe1);
-        break;
-      case "imprezyOkolicznosciowe2":
-        setVideo(youtubeLinks.imprezyOkolicznosciowe2);
-        break;
-      case "imprezyOkolicznosciowe3":
-        setVideo(youtubeLinks.imprezyOkolicznosciowe3);
-        break;
       case "rolnictwoPrecyzyjne1":
         setVideo(youtubeLinks.rolnictwoPrecyzyjne1);
         break;
@@ -144,7 +137,6 @@ const PortfolioPage = () => {
       default:
         break;
     }
-    console.log(video);
     setPlay(!play);
   }
 
@@ -153,7 +145,7 @@ const PortfolioPage = () => {
       {play ? <Youtube medium={video} /> : ""}
     </div>
     <p className="portfolioPage__p">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
     </p>
     <section className="portfolioSectionP">
       <img src={require("../../static/img/drokam-sygnet.png")} alt="drokam-portfolio" />

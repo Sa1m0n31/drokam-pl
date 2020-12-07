@@ -1,12 +1,19 @@
 import React, { useEffect, useState, useRef } from "react";
 
-import { graphql, useStaticQuery } from "gatsby";
-
 import YouTube from 'react-youtube';
 
-const Youtube = ({medium}) => {
+const Youtube = ({medium, xl}) => {
   const [playState, setPlayState] = useState(true);
-  const yt = useRef(null);
+  const ytImg = useRef(null);
+
+  useEffect(() => {
+    if(typeof document !== 'undefined') {
+      console.log("i");
+      document.addEventListener("keyup", (e) => {
+          if(e.key === 'Escape') exit();
+      });
+    }
+  }, []);
 
   const exit = () => {
     setPlayState(false);
@@ -34,7 +41,7 @@ const Youtube = ({medium}) => {
         containerClassName="videoContainer"
         onReady={e => playYoutube(e)}
       />
-    ) : <img className="youtubeImg" src={require(`../../static/img/${medium.payload}`)} alt="portoflio-img" />}
+    ) : <img ref={ytImg} className="youtubeImg" src={require(`../../static/img/${medium.payload}`)} alt="portoflio-img" />}
   </div>
 };
 

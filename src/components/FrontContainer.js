@@ -6,6 +6,7 @@ import Partners from "../components/Partners";
 import Form from "./Form";
 
 import { gsap, ScrollTrigger } from 'gsap/all';
+import moveUpBtnHandle from "../helpers/moveUpBtn"
 
 const FrontContainer = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -19,25 +20,7 @@ const FrontContainer = () => {
 
   useEffect(() => {
     if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
-      window.addEventListener("scroll", () => {
-        console.log(window.pageYOffset);
-        if(window.pageYOffset > 200) {
-          if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = "1";
-        }
-        else {
-          if(document.querySelector(".moveUpBtn") !== null) document.querySelector(".moveUpBtn").style.opacity = "0";
-        }
-      });
-
-      if(document.querySelector(".moveUpBtn") !== null) {
-        document.querySelector('.moveUpBtn').addEventListener("click", () => {
-          document.querySelector(".landingPage").scrollIntoView({
-            top: 0,
-            left: 0,
-            behavior: "smooth"
-          });
-        });
-      }
+     moveUpBtnHandle();
 
       gsap.fromTo(one.current, { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: .5, scrollTrigger: {
         trigger: "#num1",

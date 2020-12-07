@@ -1,35 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
+import moveUpBtnHandle from "../helpers/moveUpBtn"
+import Youtube from "./Youtube"
+import youtubeLinks from "../helpers/portfolioHelper"
 
 const RolnictwoPrecyzyjne = () => {
+
+  useEffect(() => {
+    moveUpBtnHandle();
+  }, []);
+
   const data = useStaticQuery(graphql`
       query RolnictwoPrecyzyjneQuery {
-          row11: file(relativePath: { eq: "drokam-8.jpg" }) {
+          mapa1: file(relativePath: { eq: "mapa-wysokosci-terenu.png" }) {
               childImageSharp {
-                  fluid(maxWidth: 500, maxHeight: 500) {
+                  fluid(maxWidth: 5800, maxHeight: 3300) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          row12: file(relativePath: { eq: "drokam-9.jpg" }) {
+          mapa2: file(relativePath: { eq: "ortofotomapa.png" }) {
               childImageSharp {
-                  fluid(maxWidth: 500, maxHeight: 500) {
+                  fluid(maxWidth: 5800, maxHeight: 3300) {
                       ...GatsbyImageSharpFluid
                   }
               }
           }
-          row21: file(relativePath: { eq: "drokam-10.jpg" }) {
+          mapa3: file(relativePath: { eq: "mapa-zdrowotnosci-roslin.png" }) {
               childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 500) {
-                      ...GatsbyImageSharpFluid
-                  }
-              }
-          }
-          row22: file(relativePath: { eq: "drokam-11.jpg" }) {
-              childImageSharp {
-                  fluid(maxWidth: 800, maxHeight: 500) {
+                  fluid(maxWidth: 5800, maxHeight: 3300) {
                       ...GatsbyImageSharpFluid
                   }
               }
@@ -39,7 +40,27 @@ const RolnictwoPrecyzyjne = () => {
 
   return <main className="portfolioSubpage extraMargin">
     <main className="rolnictwoPrecyzyjne">
-      <div className="firstRow">
+      <div className="rolnictwoPrecyzyjne__mapa__container">
+        <h2 className="mapa__title">Mapa wysokości terenu</h2>
+        <Img className="rolnictwoPrecyzyjne__mapa" fluid={data.mapa1.childImageSharp.fluid} alt="mapa-wysokosci-terenu" />
+      </div>
+      <div className="rolnictwoPrecyzyjne__mapa__container">
+        <h2 className="mapa__title">Ortofotomapa</h2>
+        <Img className="rolnictwoPrecyzyjne__mapa" fluid={data.mapa2.childImageSharp.fluid} alt="ortofotomapa" />
+      </div>
+      <div className="rolnictwoPrecyzyjne__mapa__container">
+        <h2 className="mapa__title">Mapa zdrowotności roślin</h2>
+        <Img className="rolnictwoPrecyzyjne__mapa" fluid={data.mapa3.childImageSharp.fluid} alt="mapa-zdrowotnosci-roslin" />
+      </div>
+
+
+
+
+
+
+
+
+      {/*<div className="firstRow">
           <Img className="firstRow__img" fluid={data.row11.childImageSharp.fluid} alt="drokam-rolnictwo-precyzyjne" />
           <div className="firstRow__center">
             <h4 className="center__title">
@@ -72,7 +93,7 @@ const RolnictwoPrecyzyjne = () => {
       <div className="secondRow">
         <Img className="secondRow__img" fluid={data.row21.childImageSharp.fluid} alt="drokam-rolnictwo-precyzyjne" />
         <Img className="secondRow__img" fluid={data.row22.childImageSharp.fluid} alt="drokam-rolnictwo-precyzyjne" />
-      </div>
+      </div>*/}
     </main>
   </main>
 }

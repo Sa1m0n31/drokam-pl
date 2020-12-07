@@ -23,6 +23,7 @@ export default function Home() {
       <Header title="Filmy promocyjne" mark={2} />
       <FilmyPromocyjne />
       <Footer />
+      <button className="moveUpBtn">^</button>
     </div>
     </>);
 }

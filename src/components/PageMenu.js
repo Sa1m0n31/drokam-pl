@@ -29,7 +29,7 @@ const PageMenu = ({frontPage, mark}) => {
       }
     }
     else {
-      navigate("/#onas");
+      navigate("/#num1");
     }
   }
 

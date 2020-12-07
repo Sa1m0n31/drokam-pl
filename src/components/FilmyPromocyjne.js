@@ -4,6 +4,7 @@ import InfoBox from "./InfoBox";
 
 import youtubeLinks from "../helpers/portfolioHelper";
 import Youtube from "./Youtube"
+import moveUpBtnHandle from "../helpers/moveUpBtn"
 
 const FilmyPromocyjne = () => {
   const [play, setPlay] = useState(false);
@@ -14,6 +15,7 @@ const FilmyPromocyjne = () => {
   }, [play]);
 
   useEffect(() => {
+    moveUpBtnHandle();
     setPlay(false);
   }, []);
 
@@ -41,8 +43,11 @@ const FilmyPromocyjne = () => {
       case 7:
         setVideo(youtubeLinks.filmyPromocyjne7);
         break;
-      default:
+      case 8:
         setVideo(youtubeLinks.filmyPromocyjne8);
+        break;
+      default:
+        setVideo(youtubeLinks.filmyPromocyjne9);
         break;
     }
     console.log(play);
@@ -58,8 +63,8 @@ const FilmyPromocyjne = () => {
         <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne1.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
-      <button className="filmyPromocyjne__player filmyPromocyjne__second"  onClick={() => handlePlay(2)} >
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__second"  onClick={() => handlePlay(6)} >
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne6.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
       <button className="filmyPromocyjne__player filmyPromocyjne__third"  onClick={() => handlePlay(3)} >
@@ -74,29 +79,29 @@ const FilmyPromocyjne = () => {
         <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne5.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
-      <button className="filmyPromocyjne__player filmyPromocyjne__sixth" onClick={() => handlePlay(1)}>
-        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne6.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__sixth" onClick={() => handlePlay(2)}>
+        <img className="filmyPromocyjne__img" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne2.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
     </div>
 
     <InfoBox
       title="Pozwól nam uchwycić to, co dla Ciebie ważne"
-      p1="Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, qupa"
+      p1="Sto procent profesjonalizmu, sto procent statysfakcji. Zadzwoń do nas, wypróbuj naszych usług i przekonaj się sam!"
       background={true}
     />
 
     <div className="filmyPromocyjneBottom">
-      <button className="filmyPromocyjne__player filmyPromocyjne__first"  onClick={() => handlePlay(6)}>
-        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne6.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__first"  onClick={() => handlePlay(7)}>
+        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne7.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn playBig" src={require("../../static/img/play.png")} alt="play" />
       </button>
-      <button className="filmyPromocyjne__player filmyPromocyjne__second"  onClick={() => handlePlay(7)}>
-        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne7.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__second"  onClick={() => handlePlay(8)}>
+        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne8.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
-      <button className="filmyPromocyjne__player filmyPromocyjne__third"  onClick={() => handlePlay(8)}>
-        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne8.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
+      <button className="filmyPromocyjne__player filmyPromocyjne__third"  onClick={() => handlePlay(9)}>
+        <img className="filmyPromocyjne__img filmyPromocyjne__first" src={`https://img.youtube.com/vi/${youtubeLinks.filmyPromocyjne9.payload}/maxresdefault.jpg`} alt="drokam-filmy-promocyjne" />
         <img className="playBtn" src={require("../../static/img/play.png")} alt="play" />
       </button>
     </div>

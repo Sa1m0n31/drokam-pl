@@ -23,6 +23,7 @@ export default function Home() {
       <Header title="Rolnictwo precyzyjne" mark={2} />
       <RolnictwoPrecyzyjne />
       <Footer />
+      <button className="moveUpBtn">^</button>
     </div>
     </>);
 }

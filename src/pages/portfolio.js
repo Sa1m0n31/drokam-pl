@@ -23,6 +23,7 @@ export default function Home() {
     <Header title="Portfolio" mark={2} />
     <PortfolioPage />
     <Footer />
+      <button className="moveUpBtn">^</button>
   </div>
     </>);
 }

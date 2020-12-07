@@ -9,17 +9,21 @@ const youtubeLinks = {
     type: 1,
     payload: "xOaM-DWxtr0"
   },
+  filmyPromocyjne3: {
+    type: 1,
+    payload: "j-x5F83L9Ug"
+  },
   filmyPromocyjne4: {
     type: 1,
-    payload: "J3xr1d4qosI"
+    payload: "u81DntMR4pY"
   },
   filmyPromocyjne5: {
     type: 1,
-    payload: "1Z-fmfEkQlo"
+    payload: "e7khRlLSbUo"
   },
   filmyPromocyjne6: {
     type: 1,
-    payload: "J3xr1d4qosI"
+    payload: "gfPzVI_JiTI"
   },
   filmyPromocyjne7: {
     type: 1,
@@ -29,9 +33,9 @@ const youtubeLinks = {
     type: 1,
     payload: "mIqFKvC6Jbk"
   },
-  filmyPromocyjne3: {
+  filmyPromocyjne9: {
     type: 1,
-    payload: "j-x5F83L9Ug"
+    payload: "1Z-fmfEkQlo"
   },
 
   fotografieReklamowe1: {
@@ -46,29 +50,18 @@ const youtubeLinks = {
     type: 2,
     payload: "drokam-3.jpg"
   },
-  imprezyOkolicznosciowe1: {
-    type: 2,
-    payload: "drokam-4.jpg"
-  },
-  imprezyOkolicznosciowe2: {
-    type: 2,
-    payload: "drokam-5.jpg"
-  },
-  imprezyOkolicznosciowe3: {
-    type: 2,
-    payload: "drokam-6.jpg"
-  },
+
   rolnictwoPrecyzyjne1: {
     type: 2,
-    payload: "drokam-7.jpg"
+    payload: "ortofotomapa.png"
   },
   rolnictwoPrecyzyjne2: {
     type: 2,
-    payload: "drokam-8.jpg"
+    payload: "mapa-wysokosci-terenu.png"
   },
   rolnictwoPrecyzyjne3: {
     type: 2,
-    payload: "drokam-9.jpg"
+    payload: "mapa-zdrowotnosci-roslin.png"
   }
 };
 

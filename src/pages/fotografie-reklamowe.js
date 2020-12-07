@@ -23,6 +23,7 @@ export default function Home() {
       <Header title="Fotografie reklamowe" mark={2} />
       <FotografieReklamowe />
       <Footer />
+      <button className="moveUpBtn">^</button>
     </div>
     </>
     );

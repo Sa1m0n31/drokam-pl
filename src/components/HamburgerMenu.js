@@ -16,7 +16,7 @@ const HamburgerMenu = () => {
 
   const oNasScroll = () => {
     if (typeof document !== 'undefined') {
-      const oNasSection = document.querySelector("#onas");
+      const oNasSection = document.querySelector("#num1");
       oNasSection.scrollIntoView({
         behavior: "smooth",
         top: 0,
@@ -24,7 +24,7 @@ const HamburgerMenu = () => {
       });
     }
     gsap.set(list.current, { height: 0 });
-    gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden' });
+    gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden', display: "none" });
     setOpen(false);
   }
 
@@ -37,7 +37,7 @@ const HamburgerMenu = () => {
           left: 0
         });
         gsap.set(list.current, { height: 0 });
-        gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden' });
+        gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden', display: "none" });
         setOpen(false);
       }
   }
@@ -48,13 +48,13 @@ const HamburgerMenu = () => {
       gsap.set(hamburgerMenu.current, { height: "auto" });
       gsap.fromTo(list.current, { height: 0 }, { height: 180, duration: .5 })
         .then(() => {
-         gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'visible' });
+         gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'visible', display: "block" });
         })
         .catch((e) => { console.log(e) });
     }
     else {
       setOpen(false);
-      gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden' });
+      gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'hidden', display: "block" });
       gsap.to(list.current, { height: 0, duration: .5 })
         .then(() => {
           gsap.set(hamburgerMenu.current, { height: "100%" });

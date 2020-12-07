@@ -1,11 +1,16 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Img from 'gatsby-image';
 
 import { gsap } from 'gsap/all';
+import moveUpBtnHandle from "../helpers/moveUpBtn"
 
 const Oferta = () => {
+  useEffect(() => {
+    moveUpBtnHandle();
+  }, []);
+
   const data = useStaticQuery(graphql`
       query Oferta {
           oferta1: file(relativePath: { eq: "drokam-6.jpg" }) {
@@ -22,7 +27,7 @@ const Oferta = () => {
                   }
               }
           }
-          oferta3: file(relativePath: { eq: "drokam-8.jpg" }) {
+          oferta3: file(relativePath: { eq: "drokam-13.png" }) {
               childImageSharp {
                   fluid(maxWidth: 812, maxHeight: 501) {
                       ...GatsbyImageSharpFluid
@@ -100,7 +105,7 @@ const Oferta = () => {
             onMouseOver={() => hoverHandle(3)}
             onMouseLeave={() => leaveHandle(3)}
             className="ofertaItem__link"
-            to="/imprezy-okolicznosciowe">
+            to="/">
             <Img className="ofertaItem__img" fluid={data.oferta3.childImageSharp.fluid} alt="drokam-oferta-3" />
           </Link>
           <h2 ref={three} className="ofertaItem__label">

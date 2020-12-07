@@ -21,7 +21,7 @@ const PageMobileMenu = () => {
           </Link>
         </li>
         <li className="pageMobileMenu__item">
-          <Link to="/#onas">
+          <Link to="/#num1">
             O nas
           </Link>
         </li>

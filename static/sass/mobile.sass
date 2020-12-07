@@ -66,6 +66,9 @@
         background: #fff
 
 @media(max-width: 900px)
+  .landingPage .topMenu
+    position: fixed
+
   .centerLogo__img
     display: none
 
@@ -520,6 +523,12 @@
             .usluga__item__btn
               margin-right: 5px
 
+        .form__usluga__item:nth-child(odd)
+          width: 45% !important
+
+        .form__usluga__item:nth-child(even)
+          width: 55% !important
+
 // Fotografia reklamowa
 
 @media(max-width: 1000px)
@@ -603,6 +612,23 @@
 
 @media(max-width: 900px)
   .rolnictwoPrecyzyjne
+    width: 80vw
+
+    .rolnictwoPrecyzyjne__mapa__container
+      margin: 20px 0
+
+      .mapa__title
+        font-size: 16px
+
+      .rolnictwoPrecyzyjne__mapa
+        margin: 0
+
+
+
+  // Temporary out
+
+
+  .rolnictwoPrecyzyjne
     margin-bottom: 10px
 
     .firstRow, .secondRow
@@ -674,7 +700,7 @@
     width: 1700px !important
 
   .filmyPromocyjneTop
-    grid-template-columns: repeat(3, calc(33% - 7px))
+    grid-template-columns: repeat(3, calc(33% - 40px))
 
 @media(max-width: 1500px)
   .filmyPromocyjneTop, .filmyPromocyjneBottom, .section--infobox

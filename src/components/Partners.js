@@ -28,22 +28,29 @@ const Partners = ({id}) => {
         </h2>
       </header>
       <main className="partners__content">
-        {/*<img className="partnersBackground" src={require("../../static/img/drokam-partners.png")} alt="drokam-partnerzy-tlo" />*/}
         <div className="partners__content__arrow d-none">
           <img onClick={() => scroll(true)} src={require("../../static/img/prev.png")} alt="previous" />
         </div>
         <div ref={slider} className="partners__content__inside">
           <div className="partners__content__item">
-            <img src={require("../../static/img/drokam-partnerzy1.png")} alt="kuhn" />
+            <a href="https://www.kuhn.com.pl/" rel="noreferrer" target="_blank">
+                <img src={require("../../static/img/drokam-partnerzy1.png")} alt="kuhn" />
+            </a>
           </div>
           <div className="partners__content__item">
-            <img src={require("../../static/img/drokam-partnerzy4.png")} alt="kuhn" />
+           <a href="http://www.krukowiak.com.pl/" rel="noreferrer" target="_blank">
+             <img src={require("../../static/img/drokam-partnerzy4.png")} alt="krukowiak" />
+           </a>
           </div>
           <div className="partners__content__item">
-            <img src={require("../../static/img/drokam-partnerzy3.png")} alt="kuhn" />
+            <a href="http://www.pomltd.com.pl/" rel="noreferrer" target='_blank'>
+              <img src={require("../../static/img/drokam-partnerzy3.png")} alt="pom-brodnica" />
+            </a>
           </div>
           <div className="partners__content__item">
-            <img src={require("../../static/img/drokam-partnerzy2.png")} alt="kuhn" />
+            <a href="https://www.vaderstad.com/pl/" rel="noreferrer" target="_blank">
+              <img src={require("../../static/img/drokam-partnerzy2.png")} alt="vaderstad" />
+            </a>
           </div>
         </div>
         <div className="partners__content__arrow d-none">

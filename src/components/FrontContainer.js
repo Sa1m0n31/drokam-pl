@@ -22,7 +22,7 @@ const FrontContainer = () => {
     if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
      moveUpBtnHandle();
 
-      gsap.fromTo(one.current, { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: .5, scrollTrigger: {
+      gsap.fromTo(one.current, { opacity: 0 }, { opacity: 1, duration: .5, scrollTrigger: {
         trigger: "#num1",
           start: "top 80%"
         }});
@@ -42,7 +42,7 @@ const FrontContainer = () => {
           trigger: "#num3",
           start: "top 80%"
         }});
-      gsap.fromTo(six.current, { y: 200, opacity: 0 }, { y: 0, opacity: 1, duration: .5, scrollTrigger: {
+      gsap.fromTo(six.current, { opacity: 0 }, { opacity: 1, duration: .5, scrollTrigger: {
           trigger: ".formSection",
           start: "top 80%"
         }});

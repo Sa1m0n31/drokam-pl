@@ -53,7 +53,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="right__offer__list__item">
-                <Link to="/imprezy-okolicznosciowe">
+                <Link to="/">
                   Imprezy okolicznościowe
                 </Link>
               </li>

@@ -454,9 +454,29 @@ a
         margin: 0 10px
         +flex(row, center, center)
 
-        img
+        a
+          overflow: hidden
+
+          img
+            position: relative
+            width: 100%
+            height: auto
+
+        a::after
+          content: ""
+          display: block
+          background: rgba(0, 0, 0, .5)
+          position: absolute
+          top: 0
+          left: 0
           width: 100%
-          height: auto
+          height: 100%
+          z-index: 7
+          opacity: 0
+          transition: .4s
+
+        a:hover::after
+          opacity: 1
 
     .partners__content__arrow
       width: 10%
@@ -855,11 +875,15 @@ a
     cursor: pointer
     width: 100%
     height: auto
+    border-radius: 10px
 
   *
     position: relative
     width: 100%
     height: 100%
+
+    .filmyPromocyjne__img
+      border-radius: 10px
 
   .filmyPromocyjne__first
     grid-column: 1
@@ -900,7 +924,7 @@ a
 
 .filmyPromocyjneBottom
   display: grid
-  grid-template-columns: 66% 33%
+  grid-template-columns: 70% 29%
   grid-template-rows: repeat(2, 302px)
   grid-column-gap: 10px
   grid-row-gap: 10px

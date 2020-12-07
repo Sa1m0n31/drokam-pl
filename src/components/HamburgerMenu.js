@@ -5,6 +5,7 @@ import { gsap } from 'gsap/all';
 
 const HamburgerMenu = () => {
   const [open, setOpen] = useState(false);
+  const [first, setFirst] = useState(true);
 
   const list = useRef(null);
   const item1 = useRef(null);
@@ -13,9 +14,10 @@ const HamburgerMenu = () => {
   const item4 = useRef(null);
   const item5 = useRef(null);
   const hamburgerMenu = useRef(null);
+  const hamburgerBtn = useRef(null);
 
-  const oNasScroll = () => {
-    if (typeof document !== 'undefined') {
+  const oNasScroll = async () => {
+    if((typeof document !== 'undefined')&&(typeof window !== 'undefined')) {
       const oNasSection = document.querySelector("#num1");
       oNasSection.scrollIntoView({
         behavior: "smooth",
@@ -42,13 +44,13 @@ const HamburgerMenu = () => {
       }
   }
 
-  const dropdownMenu = () => {
-    if(!open) {
-      setOpen(true);
+  const dropdownMenu = (arg = true) => {
+    if((!open)&&(arg)) {
       gsap.set(hamburgerMenu.current, { height: "auto" });
       gsap.fromTo(list.current, { height: 0 }, { height: 180, duration: .5 })
         .then(() => {
-         gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'visible', display: "block" });
+          setOpen(true);
+          gsap.set([item1.current, item2.current, item3.current, item4.current, item5.current], { visibility: 'visible', display: "block" });
         })
         .catch((e) => { console.log(e) });
     }
@@ -63,13 +65,25 @@ const HamburgerMenu = () => {
     }
   }
 
+  const homeScroll = () => {
+    if(typeof document !== 'undefined') {
+      const homeSection = document.querySelector("#___gatsby");
+      homeSection.scrollIntoView({
+        behavior: "smooth",
+        top: 0,
+        left: 0
+      });
+      dropdownMenu(false);
+    }
+  }
+
   return (<menu ref={hamburgerMenu} className="hamburgerMenu">
     <div className="hamburgerMenu__top">
-      <Link className="topLogo__link" to="/">
+      <Link className="topLogo__link" to="/" onClick={() => homeScroll()}>
         <img className="topLogo__img" src={require("../../static/img/drokam-sygnet.png")} alt="drokam-logo" />
       </Link>
 
-      <button className="hamburgerMenu__hamburger" onClick={() => dropdownMenu()}>
+      <button ref={hamburgerBtn} className="hamburgerMenu__hamburger" onClick={() => dropdownMenu()}>
         <span className="hamburger--line" />
         <span className="hamburger--line" />
         <span className="hamburger--line" />
@@ -77,7 +91,7 @@ const HamburgerMenu = () => {
     </div>
 
     <ul ref={list} className="hamburgerMenu__list">
-      <li ref={item1} onClick={() => dropdownMenu()} className="hamburgerMenuList__item"><Link to="/">Home</Link></li>
+      <li ref={item1} onClick={() => homeScroll()} className="hamburgerMenuList__item"><Link to="/">Home</Link></li>
       <li ref={item2} onClick={() => oNasScroll()} className="hamburgerMenuList__item">O nas</li>
       <li ref={item3} className="hamburgerMenuList__item"><Link to="/oferta">Oferta</Link></li>
       <li ref={item4} className="hamburgerMenuList__item"><Link to="/portfolio">Portfolio</Link></li>

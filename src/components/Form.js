@@ -233,19 +233,19 @@ export default class Form extends React.Component {
               method="POST"
               onSubmit={this.handleSubmit}
         >
-          <label className="form__name">
+          <label className="form__name" htmlFor="name">
             <input ref={this.state.nameInput} type="text" name="name"
                  placeholder="Imie i nazwisko / Nazwa firmy *"
                  value={this.state.name}
                  onChange={(e) => this.handleChange(e)} />
           </label>
-          <label className="form__contact">
+          <label className="form__contact" htmlFor="contact">
             <input ref={this.state.contactInput} type="text" name="contact"
                    placeholder="Numer telefonu / Adres email *"
                    value={this.state.contact}
                    onChange={(e) => this.handleChange(e)} />
           </label>
-          <label className="form__msg">
+          <label className="form__msg" htmlFor="msg">
             <textarea name="msg"
                     placeholder="Wiadomość"
                     value={this.state.msg}

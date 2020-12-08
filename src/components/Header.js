@@ -14,7 +14,7 @@ const Header = ({title, mark}) => {
 
   const data = useStaticQuery(graphql`
       query Header {
-          header: file(relativePath: { eq: "drokam-header-background.png" }) {
+          header: file(relativePath: { eq: "drokam-header-background.webp" }) {
               childImageSharp {
                   fluid(maxWidth: 1920, maxHeight: 350) {
                       ...GatsbyImageSharpFluid

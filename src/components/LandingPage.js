@@ -25,7 +25,7 @@ const LandingPage = () => {
                   }
               }
           }
-          landingMobile: file(relativePath: { eq: "drokam-landing-mobile.png" }) {
+          landingMobile: file(relativePath: { eq: "drokam-landing-mobile.webp" }) {
               childImageSharp {
                   fluid(maxWidth: 414, maxHeight: 736) {
                       ...GatsbyImageSharpFluid_noBase64
@@ -51,7 +51,7 @@ const LandingPage = () => {
       </menu>
       <div ref={centerLogo} className="centerLogo">
         <Img loading="eager" className="centerLogo__img" fluid={data.centerLogo.childImageSharp.fluid} alt="drokam-logo" />
-        <img loading="eager" className="centerLogo__img--mobile" src={require("../../static/img/drokam-logo-mobile.png")} alt="drokam-logo" />
+        <img loading="eager" className="centerLogo__img--mobile" src={require("../../static/img/drokam-logo-mobile.webp")} alt="drokam-logo" />
       </div>
   </div>);
 };

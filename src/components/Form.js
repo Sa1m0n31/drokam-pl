@@ -31,7 +31,7 @@ export default class Form extends React.Component {
   }
 
   componentDidMount() {
-    loadReCaptcha("6LdR3_YZAAAAAGOo3v4ImKqI1v41niaBfgQkqja4");
+    loadReCaptcha("6Lcc8f8ZAAAAAGajGeXpiWqDpa9zeHfYzp8mHl5l");
   }
 
   verifyCallback(res) {
@@ -142,6 +142,9 @@ export default class Form extends React.Component {
     e.preventDefault();
 
     /* Validation */
+    // Recaptcha
+    if(this.state.error === 4) return 0;
+
     // Name
     if(this.state.name === '') {
       await this.setState({
@@ -306,7 +309,7 @@ export default class Form extends React.Component {
           </div>
 
           <ReCaptcha
-            sitekey="6LdR3_YZAAAAAGOo3v4ImKqI1v41niaBfgQkqja4"
+            sitekey="6Lcc8f8ZAAAAAGajGeXpiWqDpa9zeHfYzp8mHl5l"
             render="implicit"
             verifyCallback={this.verifyCallback} />
 

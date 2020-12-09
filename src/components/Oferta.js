@@ -20,7 +20,7 @@ const Oferta = () => {
                   }
               }
           }
-          oferta2: file(relativePath: { eq: "drokam-7.jpg" }) {
+          oferta2: file(relativePath: { eq: "drokam-8.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 812, maxHeight: 501) {
                       ...GatsbyImageSharpFluid

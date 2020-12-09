@@ -16,7 +16,7 @@ const InfoBox = ({title, p1, p2, p3, button, background, img, id}) => {
                   }
               }
           }
-          data2: file(relativePath: { eq: "drokam-2.png" }) {
+          data2: file(relativePath: { eq: "drokam-5.jpg" }) {
               childImageSharp {
                   fluid(maxWidth: 701, maxHeight: 393) {
                       ...GatsbyImageSharpFluid

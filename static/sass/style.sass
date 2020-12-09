@@ -173,7 +173,7 @@ a
 .header--infobox
   font-size: calc(18px + 25 * ((100vw - 900px)/(1100)))
 
-.section--infobox
+.section--infoboxf
   width: calc((100vw - 280px) / 10 * 10) !important
   background: rgba(255, 255, 255, .1)
   margin: 0 auto !important
@@ -442,8 +442,9 @@ a
       height: 100%
 
     .partners__content__inside
-      width: 1000px
+      width: 100%
       overflow: hidden
+      background: rgba(255, 255, 255, .7)
       +flex(row, space-evenly, center)
 
       .partners__content__item
@@ -451,7 +452,7 @@ a
         z-index: 2
         flex: 0 0 180px
         height: 180px
-        background-color: #fff
+        background-color: transparent
         margin: 0 10px
         +flex(row, center, center)
 

@@ -3,9 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Link, navigate } from 'gatsby';
 
 const Menu = ({frontPage}) => {
-  useEffect(() => {
-    console.log = function() {};
-  }, []);
 
   const oNasScroll = () => {
     if(frontPage) {

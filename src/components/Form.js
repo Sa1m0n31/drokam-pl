@@ -195,7 +195,7 @@ export default class Form extends React.Component {
         rolnictwoPrecyzyjne: this.state.rolnictwoPrecyzyjne
       };
 
-      xhr.open("POST", "https://formspree.io/f/mgeplqle");
+      xhr.open("POST", "https://formspree.io/f/xleopbnz");
       xhr.setRequestHeader("Accept", "application/json");
       xhr.onreadystatechange = () => {
         if (xhr.readyState !== XMLHttpRequest.DONE) return;
@@ -229,9 +229,9 @@ export default class Form extends React.Component {
           <h3><span className="red">*</span> - pole wymagane</h3>
         </header>
         <form className="formSection__main"
-              action="https://formspree.io/f/mgeplqle"
+              action="https://formspree.io/f/xleopbnz"
               method="POST"
-              onSubmit={this.handleSubmit}
+              onSubmit={e => this.handleSubmit(e)}
         >
           <label className="form__name" htmlFor="name">
             <input ref={this.state.nameInput} type="text" name="name"

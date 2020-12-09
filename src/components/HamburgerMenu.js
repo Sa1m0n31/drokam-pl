@@ -6,10 +6,6 @@ import { gsap } from 'gsap/all';
 const HamburgerMenu = () => {
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    console.log = function() {};
-  }, []);
-
   const list = useRef(null);
   const item1 = useRef(null);
   const item2 = useRef(null);

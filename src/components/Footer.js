@@ -67,7 +67,7 @@ const Footer = () => {
     </div>
     <div className="footer__bottom">
       <h5 className="footer__bottom__h">
-        &copy; DROKAM 2020 Projekt i realizacja <a href="https://skylo.pl" target="_blank" rel="noreferrer">Skylo.pl</a>
+        &copy; DROKAM { new Date().getFullYear() } Projekt i realizacja <a href="https://skylo.pl" target="_blank" rel="noreferrer">Skylo.pl</a>
       </h5>
     </div>
   </footer>);

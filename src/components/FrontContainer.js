@@ -7,6 +7,10 @@ import Form from "./Form";
 
 import { gsap, ScrollTrigger } from 'gsap/all';
 import moveUpBtnHandle from "../helpers/moveUpBtn"
+import down1 from '../../static/img/down-1.png';
+import down2 from '../../static/img/down-2.jpg';
+import down3 from '../../static/img/down-3.jpg';
+import down4 from '../../static/img/down-4.jpg';
 
 const FrontContainer = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -78,6 +82,12 @@ const FrontContainer = () => {
       img={3}
     />
     <Form id={six} />
+    <section className="logos">
+      <img className="logos__item" src={down1} alt="logo" />
+      <img className="logos__item" src={down2} alt="logo" />
+      <img className="logos__item" src={down3} alt="logo" />
+      <img className="logos__item" src={down4} alt="logo" />
+    </section>
   </main>);
 }
 
